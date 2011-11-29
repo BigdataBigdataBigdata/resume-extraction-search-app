@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
@@ -42,34 +44,17 @@ $soap->LogIn(
 );
 // Upload template
 
-$data = file_get_contents('template.docx');
+$data = file_get_contents('resume.doc');
 
 $soap->SetLocalTemplate(
     array(
         'template' => base64_encode($data),
-        'format'   => 'docx'
+        'format'   => 'doc'
     )
 );
 
 
-// Assign data to template
 
-$fieldValues = array (
-    'first_name' => 'Rahul',
-    'last_name' => 'Simhadri',
-    'street_address'  => '377 Avon Road, D-106',
-    'city'     => 'Devon',
-    'state'     => 'PA',
-    'zip'     => '19333',
-    'phone_no'  => '8605435306',
-    'email'  => 'r.simhadri@jtemultimedia.com'
-);
-
-$soap->SetFieldValues(
-    array (
-        'fieldValues' => assocArrayToArrayOfArrayOfString($fieldValues)
-    )
-);
 
 
 // Build the document
@@ -80,12 +65,12 @@ $soap->CreateDocument();
 
 $result = $soap->RetrieveDocument(
     array(
-        'format' => 'pdf'
+        'format' => 'docx'
     )
 );
 $data = $result->RetrieveDocumentResult;
 
-file_put_contents('resume.pdf', base64_decode($data));
+file_put_contents('doctodocx.docx', base64_decode($data));
 
 /**
  * Convert a PHP assoc array to a SOAP array of array of string
@@ -131,3 +116,5 @@ function multiAssocArrayToArrayOfArrayOfString ($multi)
 
     </body>
 </html>
+
+
