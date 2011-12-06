@@ -42,7 +42,7 @@ foreach($resume_headings_list as $heading)
  
    if(trim($heading_node->nodeValue) === 'Education')
    {
-    
+
        $next_node = $heading_node->nextSibling;
        echo $next_node->nodeValue;
        
