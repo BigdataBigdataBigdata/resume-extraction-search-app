@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:ftr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w10="urn:schemas-microsoft-com:office:word">
+	<w:p>
+		<w:pPr>
+			<w:pStyle w:val="footer"/>
+			<w:tabs>
+				<w:tab w:val="left" w:pos="10080"/>
+				<w:tab w:val="left" w:pos="10800"/>
+				<w:tab w:val="left" w:pos="11520"/>
+				<w:tab w:val="left" w:pos="12240"/>
+				<w:tab w:val="left" w:pos="12960"/>
+				<w:tab w:val="left" w:pos="13680"/>
+				<w:tab w:val="left" w:pos="14400"/>
+				<w:tab w:val="left" w:pos="15120"/>
+				<w:tab w:val="left" w:pos="15840"/>
+				<w:tab w:val="left" w:pos="16560"/>
+				<w:tab w:val="left" w:pos="17280"/>
+				<w:tab w:val="left" w:pos="18000"/>
+			</w:tabs></w:pPr>
+	</w:p>
+</w:ftr>

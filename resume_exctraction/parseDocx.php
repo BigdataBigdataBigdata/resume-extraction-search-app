@@ -29,12 +29,20 @@ foreach ($headings as $heading) {
 }
 
 $resume_headings_list = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='ResumeHeadings']");
+if($resume_headings_list->length === 0)
+{
+    $resume_headings_list = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='Resume Headings']");
+}
 
 foreach($resume_headings_list as $heading)
 {
+   
    $heading_node = $heading->parentNode->parentNode;
-   if($heading_node->nodeValue === 'Education')
+
+ 
+   if(trim($heading_node->nodeValue) === 'Education')
    {
+    
        $next_node = $heading_node->nextSibling;
        echo $next_node->nodeValue;
        
@@ -42,9 +50,11 @@ foreach($resume_headings_list as $heading)
        echo $second_next_node->nodeValue;
    }
    
-   if($heading_node->nodeValue === 'Achievements/Awards')
+   if(trim($heading_node->nodeValue) === 'Achievements/Awards')
    {
+       
        $next_node = $heading_node->nextSibling;
+       var_dump($next_node);
        $next_node_style = $next_node->firstChild->firstChild->getAttributeNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main","val");
        echo $next_node_style;
        while($next_node_style === 'Overviewbullets' && $next_node_style!= 'ResumeHeading')
@@ -56,7 +66,7 @@ foreach($resume_headings_list as $heading)
        }
    }
    
-   if($heading_node->nodeValue === 'Skills')
+   if(trim($heading_node->nodeValue) === 'Skills')
    {
        $next_node = $heading_node->nextSibling;
        $next_node_style = $next_node->firstChild->firstChild->getAttributeNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main","val");
