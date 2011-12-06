@@ -44,12 +44,12 @@ $soap->LogIn(
 );
 // Upload template
 
-$data = file_get_contents('resume.doc');
+$data = file_get_contents('template.docx');
 
 $soap->SetLocalTemplate(
     array(
         'template' => base64_encode($data),
-        'format'   => 'doc'
+        'format'   => 'docx'
     )
 );
 
@@ -65,12 +65,12 @@ $soap->CreateDocument();
 
 $result = $soap->RetrieveDocument(
     array(
-        'format' => 'docx'
+        'format' => 'html'
     )
 );
 $data = $result->RetrieveDocumentResult;
 
-file_put_contents('doctodocx.docx', base64_decode($data));
+file_put_contents('resume.html', base64_decode($data));
 
 /**
  * Convert a PHP assoc array to a SOAP array of array of string
