@@ -1,5 +1,6 @@
 <?php
-class parseDocx
+
+class parseDoc
 {
     
     
@@ -12,8 +13,7 @@ class parseDocx
     }
     private function parse($xmlFile)
     {
-        
-    
+
 $doc = new DOMDocument();
 $xml = $doc->load($xmlFile);
 $xpath = new DOMXPath($doc);
@@ -34,15 +34,18 @@ echo "street address" . $phone;
 $email = $address_node->item(3)->parentNode->parentNode->nodeValue;
 echo "street address" . $email;
 
-$headings = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='BusinessNameDates']");
+$headings = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='Business Name & Dates']");
 foreach ($headings as $heading) {
     $company_name_dates_node = $heading->parentNode->parentNode;
     $company_name_dates = $company_name_dates_node->nodeValue;
-    $job_title_dicription_node = $company_name_dates_node->nextSibling->nodeValue;
+    echo $company_name_dates;
+    $job_title_dicription_node = $company_name_dates_node->nextSibling->nextSibling->nodeValue;
     echo $job_title_dicription_node;
 }
 
-$resume_headings_list = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='ResumeHeadings']");
+
+    $resume_headings_list = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='Resume Headings']");
+
 
 foreach($resume_headings_list as $heading)
 {
@@ -64,40 +67,38 @@ foreach($resume_headings_list as $heading)
    {
        
        $next_node = $heading_node->nextSibling;
-       $next_node_style = $next_node->firstChild->firstChild->getAttributeNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main","val");
-       echo $next_node_style;
-       while($next_node_style === 'Overviewbullets' && $next_node_style!= 'ResumeHeading')
+       $next_node = $next_node->nextSibling;
+       echo $next_node->nodeValue;
+       while(trim($next_node->nodeValue) != 'Skills')
        {
            echo $next_node->nodeValue;
            
            $next_node = $next_node->nextSibling;
-       $next_node_style = $next_node->firstChild->firstChild->getAttributeNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main","val");
        }
    }
    
    if(trim($heading_node->nodeValue) === 'Skills')
    {
        $next_node = $heading_node->nextSibling;
-       $next_node_style = $next_node->firstChild->firstChild->getAttributeNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main","val");
-       echo $next_node_style;
-       while($next_node_style === 'Overviewbullets' && $next_node_style!= 'ResumeHeading')
+       $next_node = $next_node->nextSibling;
+       echo $next_node->nodeValue;
+       while(trim($next_node->nodeValue) != null)
        {
            echo $next_node->nodeValue;
-           
-           $next_node = $next_node->nextSibling;
+       
          
            if($next_node->nodeName === 'w:p'){
-       $next_node_style = $next_node->firstChild->firstChild->getAttributeNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main","val");
+        $next_node = $next_node->nextSibling;
                   }
  else {
-    $next_node_style= null;
+    $next_node= null;
 }
        }
    }
    
 }
-}
-}
 
+    }
+}
 
 ?>
