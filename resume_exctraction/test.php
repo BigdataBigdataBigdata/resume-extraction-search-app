@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION['user_type']))
+{
+   // header('location:index.html');
+}
+
+var_dump(isset($_SESSION['user_type']));
+echo "hello how are you";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
