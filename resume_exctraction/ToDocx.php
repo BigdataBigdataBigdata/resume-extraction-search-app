@@ -1,15 +1,12 @@
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
+
+
         <?php
+        function convertToDocx($filepath, $format)
+        {
 // Turn up error reporting
-error_reporting (E_ALL|E_STRICT);
+//error_reporting (E_ALL|E_STRICT);
 
 // Turn off WSDL caching
 ini_set ('soap.wsdl_cache_enabled', 0);
@@ -44,12 +41,12 @@ $soap->LogIn(
 );
 // Upload template
 
-$data = file_get_contents('template.docx');
+$data = file_get_contents($filepath);
 
 $soap->SetLocalTemplate(
     array(
         'template' => base64_encode($data),
-        'format'   => 'docx'
+        'format'   => $format
     )
 );
 
@@ -61,16 +58,19 @@ $soap->SetLocalTemplate(
 
 $soap->CreateDocument();
 
-// Get document as PDF
+// Get document as docx
 
 $result = $soap->RetrieveDocument(
     array(
-        'format' => 'html'
+        'format' => 'docx'
     )
 );
 $data = $result->RetrieveDocumentResult;
 
-file_put_contents('resume.html', base64_decode($data));
+file_put_contents('files/resume.zip', base64_decode($data));
+
+
+        }
 
 /**
  * Convert a PHP assoc array to a SOAP array of array of string
@@ -107,6 +107,7 @@ function multiAssocArrayToArrayOfArrayOfString ($multi)
     return array_merge($_arrayKeys, $arrayValues);
 }
 
+     
         ?>
 
 
@@ -114,7 +115,5 @@ function multiAssocArrayToArrayOfArrayOfString ($multi)
 
 
 
-    </body>
-</html>
 
 
