@@ -105,6 +105,9 @@ var_dump($rid);
 $school = $res->school;
 
 
+ 
+
+
  $college_dates= $res->school['dates'];
  $degree = $res->school['degree'];
  $school = $res->school['school'];
@@ -131,6 +134,29 @@ var_dump(mysql_query("update resume set first_name = '$res->firstname',last_name
         ,city = '$res->city',state = '$res->state', zip = '$res->zip', phone = '$res->phone', email = '$res->email', degree = '$degree',
         college = '$school', college_dates = '$college_dates', awards = '$res->awards', skills = '$res->skills'
         where rid = '$rid'"));
+
+
+$comp = serialize($res->company);
+var_dump($comp);
+
+$exp =0;
+foreach($res->company as $company)
+{
+  foreach($company as $key => $comp)
+if($key === 'years'){
+
+echo $comp;
+$exp += $comp;
+    }
+    echo $exp;
+  //  var_dump($company);
+  
+//    $job_title = $company['job_title'];
+//    $job_des = $company['job_description'];
+//    var_dump(mysql_query("insert into resume_experience (rid,company_name,job_title,job_description) values ($rid,$company_name,$job_title,$job_des)"));
+}
+
+
 
 
      }
