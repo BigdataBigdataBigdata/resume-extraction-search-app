@@ -109,9 +109,27 @@ $school = $res->school;
  $degree = $res->school['degree'];
  $school = $res->school['school'];
 
+ foreach($res->awards as $award)
+ {
+    
+   $award.= $award;
+   $award.=',';
+   $res->awards=$award;
+ }
+$res->awards.=';';
+
+ foreach($res->skills as $skills)
+ {
+    
+   $skills.= $skills;
+   $skills.=',';
+   $res->skills=$skills;
+ }
+$res->skills.=';';
+
 var_dump(mysql_query("update resume set first_name = '$res->firstname',last_name = '$res->lastname',address = '$res->address'
         ,city = '$res->city',state = '$res->state', zip = '$res->zip', phone = '$res->phone', email = '$res->email', degree = '$degree',
-        college = '$school', college_dates = '$college_dates'
+        college = '$school', college_dates = '$college_dates', awards = '$res->awards', skills = '$res->skills'
         where rid = '$rid'"));
 
 
