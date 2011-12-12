@@ -1,5 +1,6 @@
 <?php
 class Resume {
+    public $uid = 0;
     public $firstname = '';
     public $lastname = '';
     public $address = '';
@@ -13,7 +14,9 @@ class Resume {
     public $awards = array();
     public $skills = array();
     
-    
+  function  __construct($uid) {
+        $this->uid = $uid;
+    }
     
  
  
