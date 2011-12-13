@@ -1,133 +1,92 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-// Turn up error reporting
-error_reporting (E_ALL|E_STRICT);
-
-// Turn off WSDL caching
-ini_set ('soap.wsdl_cache_enabled', 0);
-
-// Define credentials for LD
-define ('USERNAME', 'yourUsername');
-define ('PASSWORD', 'yourPassword');
-
-// SOAP WSDL endpoint
-define ('ENDPOINT', 'https://api.livedocx.com/1.2/mailmerge.asmx?WSDL');
-
-// Define timezone
-date_default_timezone_set('Europe/Berlin');
-
-// -----------------------------------------------------------------------------
-
-//
-// SAMPLE #1 - License Agreement
-//
-
-print('Starting sample #1 (license-agreement)...');
-
-// Instantiate SOAP object and log into LiveDocx
-
-$soap = new SoapClient(ENDPOINT);
-
-$soap->LogIn(
-    array(
-        'username' => rsimha01,
-        'password' => prannu35
-    )
-);
-// Upload template
-
-$data = file_get_contents('template.docx');
-
-$soap->SetLocalTemplate(
-    array(
-        'template' => base64_encode($data),
-        'format'   => 'docx'
-    )
-);
 
 
-// Assign data to template
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/jquery-ui-1.8.5.custom.css" type="text/css" media="all">
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/html5.js"></script>
+	<![endif]-->
+</head>
 
-$fieldValues = array (
-    'first_name' => 'Rahul',
-    'last_name' => 'Simhadri',
-    'street_address'  => '377 Avon Road, D-106',
-    'city'     => 'Devon',
-    'state'     => 'PA',
-    'zip'     => '19333',
-    'phone_no'  => '8605435306',
-    'email'  => 'r.simhadri@jtemultimedia.com'
-);
+<body>
+	<header>
+		<nav>
+			<div class="container">
+				<div class="wrapper">
+					<h1><a href="index.php"><strong>Resume Extraction</strong></a></h1>
+					<ul>
+						 <?php
+                                            if(isset($_SESSION['user_type']))
+                                            {
+                                            print '<li><a href="logout.php" class="current">logout</a></li>';
 
-$soap->SetFieldValues(
-    array (
-        'fieldValues' => assocArrayToArrayOfArrayOfString($fieldValues)
-    )
-);
+                                            }
+                                           
+                                            ?>
+         				</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="adv-content">
+			<div class="container">
+				<ul class="breadcrumbs">
+					<li>Home</li>
+				</ul>
 
+			</div>
 
-// Build the document
+	</header>
+	<section id="content">
+		<div class="top">
+			<div class="container">
+				<section>
+                                  <?php if(isset($_SESSION['user_type']))
+                                            {
+                                    print'   Click <a href="test.php"> here </a> to submit resume';
+                                   }
+                                   else{
+                                       print  '<form method="POST" action="checklogin.php" enctype="application/x-www-form-urlencoded">
+	 <p>Username: <input type="text" name="username" id="username" size="25" required/></p>
+	 <p>Password: <input type="password" name="passwd" id="passwd" size="25" required/></p>
+	 <p>
+	 <input type="submit" name="submit" id="submit" value="Login"/>
+         <p> <a href="register.html"> Register here </a>
+	 </p>
+	 </form>';
+                                   }
+                                   ?>
+	
+	 </section>
+				</div>
+			</div>
 
-$soap->CreateDocument();
+	</section>
+	<footer>
 
-// Get document as PDF
+	</footer>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.pics').cycle({
+				fx: 'toss',
+				next:	 '#next',
+				prev:	 '#prev'
+			});
 
-$result = $soap->RetrieveDocument(
-    array(
-        'format' => 'pdf'
-    )
-);
-$data = $result->RetrieveDocumentResult;
+			// Datepicker
+			$('#datepicker').datepicker({
+				inline: true
+			});
 
-file_put_contents('resume.pdf', base64_decode($data));
-
-/**
- * Convert a PHP assoc array to a SOAP array of array of string
- *
- * @param array $assoc
- * @return array
- */
-function assocArrayToArrayOfArrayOfString ($assoc)
-{
-    $arrayKeys   = array_keys($assoc);
-    $arrayValues = array_values($assoc);
-
-    return array ($arrayKeys, $arrayValues);
-}
-
-/**
- * Convert a PHP multi-depth assoc array to a SOAP array of array of array of string
- *
- * @param array $multi
- * @return array
- */
-function multiAssocArrayToArrayOfArrayOfString ($multi)
-{
-    $arrayKeys   = array_keys($multi[0]);
-    $arrayValues = array();
-
-    foreach ($multi as $v) {
-        $arrayValues[] = array_values($v);
-    }
-
-    $_arrayKeys = array();
-    $_arrayKeys[0] = $arrayKeys;
-
-    return array_merge($_arrayKeys, $arrayValues);
-}
-
-        ?>
-
-
-
-
-
-
-    </body>
+		});
+	</script>
+</body>
 </html>

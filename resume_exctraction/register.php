@@ -26,7 +26,7 @@ $rs2 = mysql_query( $sq2) or die( "Could not execute query" );
 $num = mysql_numrows( $rs2 );
 if( $num != 0 )
 {
-     header( 'Location:index.html' );
+     header( 'Location:index.php' );
 }
 ?>
 

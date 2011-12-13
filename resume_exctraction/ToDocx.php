@@ -6,14 +6,14 @@
         function convertToDocx($filepath, $format)
         {
 // Turn up error reporting
-//error_reporting (E_ALL|E_STRICT);
+error_reporting (E_ERROR|E_PARSE);
 
 // Turn off WSDL caching
 ini_set ('soap.wsdl_cache_enabled', 0);
 
-// Define credentials for LD
-define ('USERNAME', 'yourUsername');
-define ('PASSWORD', 'yourPassword');
+//// Define credentials for LD
+//define ('USERNAME', 'yourUsername');
+//define ('PASSWORD', 'yourPassword');
 
 // SOAP WSDL endpoint
 define ('ENDPOINT', 'https://api.livedocx.com/1.2/mailmerge.asmx?WSDL');
@@ -27,7 +27,7 @@ date_default_timezone_set('Europe/Berlin');
 // SAMPLE #1 - License Agreement
 //
 
-print('Starting sample #1 (license-agreement)...');
+
 
 // Instantiate SOAP object and log into LiveDocx
 

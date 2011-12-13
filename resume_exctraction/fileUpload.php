@@ -5,7 +5,7 @@ require_once 'ToDocx.php';
 require_once 'Resume.php';
 require_once 'include/bootstrap.php';
 
-
+$sucess = false;
 
 
 if ($_FILES["file"]["error"] > 0)
@@ -15,9 +15,6 @@ if ($_FILES["file"]["error"] > 0)
  
   $file_name_explode_array = explode(".",$_FILES["file"]["name"]);
   $file_extention = $file_name_explode_array[1];  
-  
-  
-  echo $file_extention;
    if($file_extention === 'docx')
       {
         
@@ -33,7 +30,7 @@ if ($_FILES["file"]["error"] > 0)
         
          $parser = new parseDocx('files/unzipped/word/document.xml');
 
-persist_resume($parser);
+$sucess = persist_resume($parser);
         
 
 
@@ -45,9 +42,8 @@ persist_resume($parser);
      
      if($file_extention === 'rtf')
      {
-         echo "extention is rtf";
          move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.rtf");
-         convertToDocx("files/1.rtf",".rtf");
+         @convertToDocx("files/1.rtf",".rtf");
          $zip = new ZipArchive;
      $res = $zip->open('files/resume.zip');
      if ($res === TRUE) {
@@ -55,7 +51,7 @@ persist_resume($parser);
          $zip->close();
         
          $parser = new parseDoc('files/unzipped/word/document.xml');
-         persist_resume($parser);
+       $sucess =  persist_resume($parser);
      } else {
          $failed = true;
      }
@@ -73,7 +69,8 @@ persist_resume($parser);
          $zip->close();
          echo 'ok';
          $parser = new parseDoc('files/unzipped/word/document.xml');
-         persist_resume($parser);
+        
+      $sucess =   persist_resume($parser);
      } else {
          $failed= true;
       }
@@ -100,10 +97,12 @@ $res->school=$parser->school;
 $res->awards = $parser->awards;
 $res->skills = $parser->skills;
 
+
+$parser->skills;
+
 if(mysql_query("insert into resume (uid) values ($res->uid)"))
 {
 $rid = mysql_insert_id();
-var_dump($rid);
 $school = $res->school;
 
 
@@ -113,28 +112,31 @@ $school = $res->school;
  $college_dates= $res->school['dates'];
  $degree = $res->school['degree'];
  $school = $res->school['school'];
-
+$awardString = "";
  foreach($res->awards as $award)
  {
     
-   $award.= $award;
-   $award.='|';
-   $res->awards=$award;
+   $awardString.= $award;
+   $awardString.='|';
+  
  }
-$res->awards.=';';
+$awardString.=';';
 
+$skillsString = "";
+
+$res->skills;
  foreach($res->skills as $skills)
  {
     
-   $skills.= $skills;
-   $skills.='|';
-   $res->skills=$skills;
+   $skillsString.= $skills;
+   $skillsString.=',';
+  
  }
-$res->skills.=';';
+$skillsString.=';';
 
-mysql_query("update resume set first_name = '$res->firstname',last_name = '$res->lastname',address = '$res->address'
+$sucess = mysql_query("update resume set first_name = '$res->firstname',last_name = '$res->lastname',address = '$res->address'
         ,city = '$res->city',state = '$res->state', zip = '$res->zip', phone = '$res->phone', email = '$res->email', degree = '$degree',
-        college = '$school', college_dates = '$college_dates', awards = '$res->awards', skills = '$res->skills'
+        college = '$school', college_dates = '$college_dates', awards = '$awardString', skills = '$skillsString'
         where rid = '$rid'");
 
 
@@ -145,11 +147,8 @@ foreach($res->company as $company)
 {
   foreach($company as $key => $comp)
 if($key === 'years'){
-
-echo $comp;
 $exp += $comp;
     }
-    echo $exp;
   
 
     
@@ -160,12 +159,97 @@ $exp += $comp;
 //    var_dump(mysql_query("insert into resume_experience (rid,company_name,job_title,job_description) values ($rid,$company_name,$job_title,$job_des)"));
 }
 
-var_dump(mysql_query("update resume set experience = '$exp' where rid = '$rid'"));
+$sucess = mysql_query("update resume set experience = '$exp' where rid = '$rid'");
 $comp = serialize($res->company);
-var_dump(mysql_query("insert into experience (rid,experience) values ('$rid','$comp')"));
+$sucess = mysql_query("insert into experience (rid,experience) values ('$rid','$comp')");
 
+
+if($sucess)
+    return true;
+else
+    return false;
      }
      }
+
+
+?> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/jquery-ui-1.8.5.custom.css" type="text/css" media="all">
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="container">
+				<div class="wrapper">
+					<h1><a href="index.php"><strong>Resume Extraction</strong></a></h1>
+					<ul>
+						 <?php
+                                            if(isset($_SESSION['user_type']))
+                                            {
+                                            print '<li><a href="logout.php" class="current">logout</a></li>';
+
+                                            }
+                                            ?>
+						
+         				</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="adv-content">
+			<div class="container">
+				<ul class="breadcrumbs">
+					<li>Home</li>
+				</ul>
+
+			</div>
+
+	</header>
+	<section id="content">
+		<div class="top">
+			<div class="container">
+				<section>
+                                    <?php if($sucess)
+                                        print'	Thanks for submitting your resume.';
+                                    ?>
+	 </section>
+				</div>
+			</div>
+
+	</section>
+	<footer>
+
+	</footer>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.pics').cycle({
+				fx: 'toss',
+				next:	 '#next',
+				prev:	 '#prev'
+			});
+
+			// Datepicker
+			$('#datepicker').datepicker({
+				inline: true
+			});
+
+		});
+	</script>
+</body>
+</html>
     
   
-?> 

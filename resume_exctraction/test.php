@@ -1,11 +1,6 @@
  <?php
-session_start();
-if(!isset($_SESSION['user_type']))
-{
-    header('location:index.html');
-}
+require_once('include/bootstrap.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +23,7 @@ if(!isset($_SESSION['user_type']))
 		<nav>
 			<div class="container">
 				<div class="wrapper">
-					<h1><a href="index.html"><strong>Resume Extractor</strong></a></h1>
+					<h1><a href="index.php"><strong>Resume Extractor</strong></a></h1>
 					<ul>
                                             <?php 
                                             if(isset($_SESSION['user_type']))
@@ -76,10 +71,8 @@ Please specify a file, or a set of files:<br>
 	<footer>
 		<div class="container">
 			<div class="wrapper">
-				<div class="copy">Industrial Services (c) 2010	|	<a href="index-4.html">Privacy policy</a></div>
-				<address class="phone">
-					We're glad to help you. Please email or call us. <strong>1-123-456-7890</strong>
-				</address>
+				<div class="copy"></div>
+				
 			</div>
 		</div>
 	</footer>

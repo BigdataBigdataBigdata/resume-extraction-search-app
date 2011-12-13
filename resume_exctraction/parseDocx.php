@@ -94,7 +94,6 @@ foreach($resume_headings_list as $heading)
        
        $next_node = $heading_node->nextSibling;
        $next_node_style = $next_node->firstChild->firstChild->getAttributeNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main","val");
-       echo $next_node_style;
        while($next_node_style === 'Overviewbullets' && $next_node_style!= 'ResumeHeading')
        {
            $this->awards[] = $next_node->nodeValue;
@@ -108,7 +107,6 @@ foreach($resume_headings_list as $heading)
    {
        $next_node = $heading_node->nextSibling;
        $next_node_style = $next_node->firstChild->firstChild->getAttributeNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main","val");
-       echo $next_node_style;
        while($next_node_style === 'Overviewbullets' && $next_node_style!= 'ResumeHeading')
        {
            $this->skills[]= $next_node->nodeValue;
