@@ -26,8 +26,9 @@ if($count==1){
 
 $_SESSION['user_name']= $myusername;
 $_SESSION['user_type']="authenticated";
-$_SESSION['uid'] = $uid;
-//session_register("mypassword");
+
+$_SESSION['uid'] = $uid->uid;
+
 header("location:test.php");
 }
 else {

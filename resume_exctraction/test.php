@@ -1,13 +1,9 @@
  <?php
 session_start();
-var_dump($_SESSION);
 if(!isset($_SESSION['user_type']))
 {
     header('location:index.html');
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -32,12 +28,17 @@ if(!isset($_SESSION['user_type']))
 		<nav>
 			<div class="container">
 				<div class="wrapper">
-					<h1><a href="index.html"><strong>Industrial</strong>Services</a></h1>
+					<h1><a href="index.html"><strong>Resume Extractor</strong></a></h1>
 					<ul>
-						<li><a href="index.html" class="current">about</a></li>
-						<li><a href="index-1.html">products and services</a></li>
-						<li><a href="index-2.html">industries</a></li>
-						<li><a href="index-3.html">contacts</a></li>
+                                            <?php 
+                                            if(isset($_SESSION['user_type']))
+                                            {
+                                            print '<li><a href="logout.php" class="current">logout</a></li>';
+
+                                            }
+                                            ?>
+						
+						
 					</ul>
 				</div>
 			</div>

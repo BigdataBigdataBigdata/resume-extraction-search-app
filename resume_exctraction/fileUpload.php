@@ -3,9 +3,9 @@ require_once 'parseDocx.php';
 require_once 'parseDoc.php';
 require_once 'ToDocx.php';
 require_once 'Resume.php';
-require_once 'include/database.php';
-global $uid;
-$uid =1;
+require_once 'include/bootstrap.php';
+
+
 
 
 if ($_FILES["file"]["error"] > 0)
@@ -20,7 +20,7 @@ if ($_FILES["file"]["error"] > 0)
   echo $file_extention;
    if($file_extention === 'docx')
       {
-          echo "docx";
+        
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "files/1.zip");
       
@@ -30,7 +30,7 @@ if ($_FILES["file"]["error"] > 0)
      if ($res === TRUE) {
          $zip->extractTo('files/unzipped/');
          $zip->close();
-         echo 'ok';
+        
          $parser = new parseDocx('files/unzipped/word/document.xml');
 
 persist_resume($parser);
@@ -39,7 +39,7 @@ persist_resume($parser);
 
 
      } else {
-         echo 'failed';
+         $failed = true;
      }
       }
      
@@ -53,10 +53,11 @@ persist_resume($parser);
      if ($res === TRUE) {
          $zip->extractTo('files/unzipped/');
          $zip->close();
-         echo 'ok';
+        
          $parser = new parseDoc('files/unzipped/word/document.xml');
+         persist_resume($parser);
      } else {
-         echo 'failed';
+         $failed = true;
      }
      }
      
@@ -72,8 +73,9 @@ persist_resume($parser);
          $zip->close();
          echo 'ok';
          $parser = new parseDoc('files/unzipped/word/document.xml');
+         persist_resume($parser);
      } else {
-         echo 'failed';
+         $failed= true;
       }
          
      
@@ -116,7 +118,7 @@ $school = $res->school;
  {
     
    $award.= $award;
-   $award.=',';
+   $award.='|';
    $res->awards=$award;
  }
 $res->awards.=';';
@@ -125,19 +127,18 @@ $res->awards.=';';
  {
     
    $skills.= $skills;
-   $skills.=',';
+   $skills.='|';
    $res->skills=$skills;
  }
 $res->skills.=';';
 
-var_dump(mysql_query("update resume set first_name = '$res->firstname',last_name = '$res->lastname',address = '$res->address'
+mysql_query("update resume set first_name = '$res->firstname',last_name = '$res->lastname',address = '$res->address'
         ,city = '$res->city',state = '$res->state', zip = '$res->zip', phone = '$res->phone', email = '$res->email', degree = '$degree',
         college = '$school', college_dates = '$college_dates', awards = '$res->awards', skills = '$res->skills'
-        where rid = '$rid'"));
+        where rid = '$rid'");
 
 
-$comp = serialize($res->company);
-var_dump($comp);
+
 
 $exp =0;
 foreach($res->company as $company)
@@ -149,6 +150,9 @@ echo $comp;
 $exp += $comp;
     }
     echo $exp;
+  
+
+    
   //  var_dump($company);
   
 //    $job_title = $company['job_title'];
@@ -156,8 +160,9 @@ $exp += $comp;
 //    var_dump(mysql_query("insert into resume_experience (rid,company_name,job_title,job_description) values ($rid,$company_name,$job_title,$job_des)"));
 }
 
-
-
+var_dump(mysql_query("update resume set experience = '$exp' where rid = '$rid'"));
+$comp = serialize($res->company);
+var_dump(mysql_query("insert into experience (rid,experience) values ('$rid','$comp')"));
 
      }
      }

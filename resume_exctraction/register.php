@@ -13,7 +13,7 @@ if (!$con)
   }
 @mysql_select_db("resume_extraction", $con) or die( "Could not select database" );
 //echo "connected";
-
+$pwd= md5($pwd);
 
 $sql = "INSERT INTO users (name,pass,mail) VALUES ('$uname','$pwd','$email')";
 //mysql_query( $sql ) or die( "Could not execute query" );
