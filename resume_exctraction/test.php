@@ -58,7 +58,7 @@ require_once('include/bootstrap.php');
 enctype="multipart/form-data" method="post">
 
 <p>
-Please specify a file, or a set of files:<br>
+Please upload a resume:<br>
 <input type="file" name="file" size="40">
 </p>
 <div>

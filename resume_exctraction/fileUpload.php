@@ -17,9 +17,11 @@ if ($_FILES["file"]["error"] > 0)
   $file_extention = $file_name_explode_array[1];  
    if($file_extention === 'docx')
       {
-        
+       mkdir('files/'.$uid."/".session_id());
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "files/1.zip");
+      "files/".$uid.'/'.session_id()."/".$_FILES["file"]["name"]);
+
+move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.zip");
       
       
       $zip = new ZipArchive;
