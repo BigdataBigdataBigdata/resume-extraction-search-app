@@ -3,7 +3,7 @@
 function search()
 {
     
-   alert($('#first_name').val);
+   alert($('#searchfirst_name').val);
      if($('#city').val)
          {
              city= $('#city').val;
