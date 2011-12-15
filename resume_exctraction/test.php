@@ -58,8 +58,21 @@ require_once('include/bootstrap.php');
                            $result =  mysql_query("select * from users where uid = '$uid'");
                            $obj = mysql_fetch_object($result);
                            echo "Welcome user: ".$obj->mail;
+                           print '<br />';   
+                           print '</br>';
+
                            $result = mysql_query("select * from resume where uid = '$uid'");
-                          print '<table border="8" bordercolor = "blue">';
+                           print '<h3 >Resumes in your profile</h3>';
+                          print '<table >';
+                          print '
+                                                      
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>Address</th>
+                              <th>Pnone</th>
+                              <th>email</th>
+                              <th>Resume</th>
+                              </tr>';
                            while($row = mysql_fetch_array($result))
   {
   print "<tr>
@@ -71,7 +84,7 @@ require_once('include/bootstrap.php');
       <td> <a href=". $row['location']."> Click here to download</a></td></tr>
   ";
   }
-  print'</table>';
+  print'</table> </br>';
 
                             ?>
 		<form action="fileUpload.php"
@@ -84,6 +97,9 @@ Please upload a resume:<br>
 <div>
 <input type="submit" value="Send">
 </div>
+<p> Resume should follow <a href="http://office.microsoft.com/en-us/templates/basic-resume-template-TC102716871.aspx">this</a> format
+    or you can use <a href="form.html">Resume Builder</a> to build your resume.
+</p>
 </form>
 </div>
 </div>

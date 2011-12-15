@@ -1,28 +1,62 @@
 <!DOCTYPE HTML >
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <link rel="stylesheet" type="text/css" href="css/form.css" />
-       
-        <title></title>
-    </head>
-    <body>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/jquery-ui-1.8.5.custom.css" type="text/css" media="all">
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="container">
+				<div class="wrapper">
+					<h1><a href="index.php"><strong>Resume Extraction</strong></a></h1>
+					<ul>
+						<li><a href="index.php" class="current">Logout</a></li>
+
+         				</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="adv-content">
+			<div class="container">
+				<ul class="breadcrumbs">
+                                    <li><strong>Resume Builder</strong></li>
+				</ul>
+
+			</div>
+
+	</header>
+	<section id="content">
+		<div class="top">
+			<div class="container">
+				<section>
         <form action="resumeFormProcessor.php" method="post">
             <fieldset name='contact-information'>
                
-                <label> First Name </label><input type='text' name='first-name' size='30' required >
+                <label> First Name </label> <br> <input type='text' name='first-name' size='30' required >
                 </input>
-                </br>
-                <label> Last Name </label><input type='text' name='last-name' required size='30'>
+                <br>
+                <label> Last Name </label> <br> <input type='text' name='last-name' required size='30'>
                 </input>
-                </br>
-                <label> Address </label>  <input type='text' name='address' required  size='30'>
+                <br>
+                <label> Address </label> <br>   <input type='text' name='address' required  size='30'>
                 </input>
-                </br>
-                <label> City</label> <input type='' name="city" required size="30">
+                <br>
+                <label> City</label> <br>  <input type='' name="city" required size="30">
                 </input>
-                </br>
-                <label>State </label> <select name="state"> 
+                <br>
+                <label>State </label> <br>  <select name="state">
                     <option value="" selected="selected">Select a State</option> 
                     <option value="AL">Alabama</option> 
                     <option value="AK">Alaska</option> 
@@ -76,53 +110,76 @@
                     <option value="WI">Wisconsin</option> 
                     <option value="WY">Wyoming</option>
                 </select>
-                </br>
-                <label> Zip Code</label>
+                <br>
+                <label> Zip Code</label> <br>
                 <input type="number" name="zip" size="5" required>
-                </br>
-                <label>Phone</label>
+                <br>
+                <label>Phone</label> <br>
                 <input type="number" name="phone" size="10" required>
-                </br>
-                <label>Email</label>
+                <br>
+                <label>Email</label> <br>
                 <input type="email" size="30" name="email" required>
                 
                 </input>
             </fieldset>
-              <label> Company Name </label><input type='text' name='company-name' size='30' required >
+              <label> Company Name </label> <br> <input type='text' name='company-name' size='30' required >
                 </input>
-                </br>
-                <label> Experiance </label>
-                <label> Years </label><input type='text' name='experience-years' required size='30'>
+                <br>
+                <label> Experiance </label> <br>
+                <label> Years </label> <br> <input type='text' name='experience-years' required size='30'>
                 </input>
-                </br>
-                <label> Job Title </label>  <input type='text' name='job-title' required  size='30'>
+                <br>
+                <label> Job Title </label> <br>   <input type='text' name='job-title' required  size='30'>
                 </input>
-                </br>
-                <label> Description and Responsibilities</label> <input type='' name="job-discription" required size="30">
+                <br>
+                <label> Description and Responsibilities</label> <br>  <input type='' name="job-discription" required size="30">
                 </input>
                 <br />
                 
-                 <label> Highest Level of Education </label><input type='text' name='education' size='30' required >
+                 <label> Highest Level of Education </label> <br> <input type='text' name='education' size='30' required >
                 </input>
-                </br>
+                <br>
                
-                <label> School Name and Address </label><input type='text' name='school' required size='30'>
+                <label> School Name and Address </label> <br> <input type='text' name='school' required size='30'>
                 </input>
-                </br>
-                <label> Dates of Attendance </label>  <input type='text' name='school-atandance' required  size='30'>
+                <br>
+                <label> Dates of Attendance </label> <br>   <input type='text' name='school-atandance' required  size='30'>
                 </input>
-                </br>
+                <br>
                 
                 
-                <label>Achievments-awards </label>  <input type='text' name='awards' required  size='30'>
+                <label>Achievments-awards </label> <br>   <input type='text' name='awards' required  size='30'>
                 </input>
-                </br>
-                <label>Skills </label>  <input type='text' name='skills' required  size='30'>
+                <br>
+                <label>Skills </label> <br>   <input type='text' name='skills' required  size='30'>
                 </input>
-                </br>
+                <br>
                 <br>
                 <input type="submit" ></input>
-                </br>
+                <br>
         </form>
-    </body>
+     </section>
+				</div>
+			</div>
+
+	</section>
+	<footer>
+
+	</footer>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.pics').cycle({
+				fx: 'toss',
+				next:	 '#next',
+				prev:	 '#prev'
+			});
+
+			// Datepicker
+			$('#datepicker').datepicker({
+				inline: true
+			});
+
+		});
+	</script>
+</body>
 </html>

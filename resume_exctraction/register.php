@@ -24,8 +24,13 @@ if (!mysql_query($sql,$con))
 $sq2 = "select * from users where mail=\"$email\"";                                                  
 $rs2 = mysql_query( $sq2) or die( "Could not execute query" );
 $num = mysql_numrows( $rs2 );
+$uid = mysql_insert_id();
 if( $num != 0 )
 {
+    session_start();
+    $_SESSION['uid']= $uid;
+    $_SESSION['user_type'] = 'authenticated';
+    $_SESSION['user_name'] = $uname;
      header( 'Location:index.php' );
 }
 ?>

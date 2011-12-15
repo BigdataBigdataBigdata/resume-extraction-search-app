@@ -35,12 +35,14 @@ blockquote, q {
 }
 table, td, th
 {
-border:1px solid green;
+border:1px solid #9f9f9f;
+text-align:center;
 }
 th
 {
-background-color:green;
+background-color:#9f9f9f;
 color:white;
+
 }
 img {
 	vertical-align:top; 
