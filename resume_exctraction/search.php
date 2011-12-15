@@ -11,9 +11,12 @@ $first_name = $_GET['first_name'];
        $skills = $_GET['skills'];
        $exp = $_GET['exp'];  
        
-       $result = mysql_query("select * from resume where first_name= '$first_name', last_name '$last_name', email='$email', city = '$city',
-               state = '$state', zip = '$zip', degree = '$degree', college='$college', skills ='$skills', experience ='$exp'");
-var_dump($result);
+       $query = "select * from resume";
+       if(isset($first_name))
+       {
+           $query .= "where first_name = '$first_name'";
+       }
+       $result = mysql_query($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
