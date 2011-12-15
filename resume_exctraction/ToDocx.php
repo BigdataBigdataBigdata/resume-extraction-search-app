@@ -1,8 +1,4 @@
-
-
-
-
-        <?php
+ <?php
         function convertToDocx($filepath, $format)
         {
 // Turn up error reporting

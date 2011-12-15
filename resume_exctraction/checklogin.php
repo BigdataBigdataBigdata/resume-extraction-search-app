@@ -1,9 +1,7 @@
 <?php
-
-require_once('include/database.php');
+require_once 'include/database.php';
 $myusername=$_POST['username'];
 $mypassword=$_POST['passwd'];
-echo $mypassword;
 // To protect MySQL injection (more detail about MySQL injection)
 $myusername = stripslashes($myusername);
 $mypassword = stripslashes($mypassword);

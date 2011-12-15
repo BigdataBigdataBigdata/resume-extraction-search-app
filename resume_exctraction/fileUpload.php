@@ -1,9 +1,10 @@
 <?php
+require_once 'include/bootstrap.php';
 require_once 'parseDocx.php';
 require_once 'parseDoc.php';
 require_once 'ToDocx.php';
 require_once 'Resume.php';
-require_once 'include/bootstrap.php';
+
 
 $sucess = false;
 
@@ -17,9 +18,18 @@ if ($_FILES["file"]["error"] > 0)
   $file_extention = $file_name_explode_array[1];  
    if($file_extention === 'docx')
       {
-       mkdir('files/'.$uid."/".session_id());
+       if(is_dir('files/'.$uid.'/'.session_id()))
+       {
+           $path = 'files/'.$uid.'/'.session_id().'/'.rand();
+       }
+ else {
+ {
+     $path = 'files/'.$uid.'/'.session_id();
+ }
+       }
+       mkdir($path);
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "files/".$uid.'/'.session_id()."/".$_FILES["file"]["name"]);
+      $path."/".$_FILES["file"]["name"]);
 
 move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.zip");
       
