@@ -54,6 +54,26 @@ require_once('include/bootstrap.php');
 	<section id="content">
 	<div class="top">
 			<div class="container">
+                            <?php require_once'include/bootstrap.php';
+                           $result =  mysql_query("select * from users where uid = '$uid'");
+                           $obj = mysql_fetch_object($result);
+                           echo "Welcome user: ".$obj->mail;
+                           $result = mysql_query("select * from resume where uid = '$uid'");
+                          print '<table border="8" bordercolor = "blue">';
+                           while($row = mysql_fetch_array($result))
+  {
+  print "<tr>
+       <td> ".$row['first_name']."</td>
+            <td>". $row['last_name']."</td>
+                 <td>". $row['address']."</td>
+                      <td>". $row['phone']."</td>
+                           <td>". $row['email'] ."</td>
+      <td> <a href=". $row['location']."> Click here to download</a></td></tr>
+  ";
+  }
+  print'</table>';
+
+                            ?>
 		<form action="fileUpload.php"
 enctype="multipart/form-data" method="post">
 

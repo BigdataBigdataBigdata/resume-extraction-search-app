@@ -5,6 +5,7 @@ mark, rp, rt, ruby, summary, time{display:inline}
 body {background:url(../images/body-bg.gif) #1b1b1b;font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1.125em;color:#9f9f9f}
 .ic, .ic a {border:0;float:right;background:#000;color:#f00;width:100%;line-height:10px;font-size:10px;margin:-50% 0 0 0;overflow:hidden;padding:0}
 html {min-width:980px}
+
 html, body {height:100%}
 /* Global Structure ============================================================= */
 .container {font-size:.75em}
@@ -148,4 +149,6 @@ footer .container {color:#fff;font-size:16px;line-height:1.2em;padding:16px 0 16
 		#contacts-form textarea {color:#fff;border:1px solid #444343;background:rgba(204, 204, 204, .05);padding:2px 0 2px 5px;width:210px;overflow:auto;height:102px;margin-bottom:12px}
 		#contacts-form textarea:focus {border-color:#fff}
 		#contacts-form .link1 {float:right;margin-left:11px}
+
+
 /*==========================================*/

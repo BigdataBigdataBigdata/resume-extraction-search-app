@@ -7,7 +7,8 @@ require_once 'Resume.php';
 
 
 $sucess = false;
-
+$path = '';
+$uid ;
 
 if ($_FILES["file"]["error"] > 0)
   {
@@ -28,8 +29,11 @@ if ($_FILES["file"]["error"] > 0)
  }
        }
        mkdir($path);
+       $upload_path = $path.'/'.$_FILES["file"]["name"];
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      $path."/".$_FILES["file"]["name"]);
+      $upload_path);
+
+    
 
 move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.zip");
       
@@ -42,7 +46,7 @@ move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.zip");
         
          $parser = new parseDocx('files/unzipped/word/document.xml');
 
-$sucess = persist_resume($parser);
+$sucess = persist_resume($parser,$upload_path,$uid);
         
 
 
@@ -54,6 +58,18 @@ $sucess = persist_resume($parser);
      
      if($file_extention === 'rtf')
      {
+         if(is_dir('files/'.$uid."/".session_id()))
+       {
+           $path = 'files/'.$uid."/".session_id().'/'.rand();
+       }
+       else
+       {
+           $path = 'files/'.$uid."/".session_id();
+       }
+       mkdir($path);
+    $upload_path = $path.'/'.$_FILES["file"]["name"];
+      move_uploaded_file($_FILES["file"]["tmp_name"],
+      $upload_path);
          move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.rtf");
          @convertToDocx("files/1.rtf",".rtf");
          $zip = new ZipArchive;
@@ -63,7 +79,7 @@ $sucess = persist_resume($parser);
          $zip->close();
         
          $parser = new parseDoc('files/unzipped/word/document.xml');
-       $sucess =  persist_resume($parser);
+       $sucess =  persist_resume($parser,$upload_path,$uid);
      } else {
          $failed = true;
      }
@@ -71,7 +87,18 @@ $sucess = persist_resume($parser);
      
      if($file_extention === 'doc')
      {
-         echo "extention is doc";
+        if(is_dir('files/'.$uid."/".session_id()))
+       {
+           $path = 'files/'.$uid."/".session_id().'/'.rand();
+       }
+       else
+       {
+           $path = 'files/'.$uid."/".session_id();
+       }
+       mkdir($path);
+    $upload_path = $path.'/'.$_FILES["file"]["name"];
+      move_uploaded_file($_FILES["file"]["tmp_name"],
+      $upload_path);
          move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.doc");
          convertToDocx("files/1.doc",".doc");
          $zip = new ZipArchive;
@@ -82,7 +109,7 @@ $sucess = persist_resume($parser);
          echo 'ok';
          $parser = new parseDoc('files/unzipped/word/document.xml');
         
-      $sucess =   persist_resume($parser);
+      $sucess =   persist_resume($parser,$upload_path,$uid);
      } else {
          $failed= true;
       }
@@ -92,9 +119,9 @@ $sucess = persist_resume($parser);
      
       }
       
-     function persist_resume($parser)
+     function persist_resume($parser, $path)
      {
-         $uid = 1;
+          $uid = 1;
           $res = new Resume($uid);
 $res->firstname = $parser->firstname;
 $res->lastname =  $parser->lastname;
@@ -175,6 +202,8 @@ $sucess = mysql_query("update resume set experience = '$exp' where rid = '$rid'"
 $comp = serialize($res->company);
 $sucess = mysql_query("insert into experience (rid,experience) values ('$rid','$comp')");
 
+ $sucess = mysql_query("update resume set location='$path' where rid = '$rid'");
+ var_dump($sucess);
 
 if($sucess)
     return true;
@@ -236,7 +265,7 @@ else
 			<div class="container">
 				<section>
                                     <?php if($sucess)
-                                        print'	Thanks for submitting your resume.';
+                                        print'	Thanks for submitting your resume. <a href="test.php" > Click here to Submit more resumes</a>';
                                     ?>
 	 </section>
 				</div>

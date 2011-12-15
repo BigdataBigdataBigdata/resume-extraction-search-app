@@ -33,10 +33,14 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
-table, table td { 
-	padding:0;
-	border:none;
-	border-collapse:collapse;
+table, td, th
+{
+border:1px solid green;
+}
+th
+{
+background-color:green;
+color:white;
 }
 img {
 	vertical-align:top; 
