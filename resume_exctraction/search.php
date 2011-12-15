@@ -1,5 +1,19 @@
- <?php
-require_once('include/bootstrap.php');
+<?php 
+require_once'include/bootstrap.php';
+$first_name = $_GET['first_name'];
+       $last_name = $_GET['last_name'];
+       $email = $_GET['email'];
+       $city = $_GET['city'];
+       $state =$_GET['state'];
+       $zip = $_GET['zip'];
+       $degree = $_GET['degree'];
+       $college =$_GET['college'];
+       $skills = $_GET['skills'];
+       $exp = $_GET['exp'];  
+       
+       $result = mysql_query("select * from resume where first_name= '$first_name', last_name '$last_name', email='$email', city = '$city',
+               state = '$state', zip = '$zip', degree = '$degree', college='$college', skills ='$skills', experience ='$exp'");
+var_dump($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +27,10 @@ require_once('include/bootstrap.php');
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
 	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+        <script type="text/javascript" src="js/resume_search.js"></script>
+        <script>
+
+</script>
 	<!--[if lt IE 9]>
 		<script type="text/javascript" src="js/html5.js"></script>
 	<![endif]-->
@@ -23,72 +41,46 @@ require_once('include/bootstrap.php');
 		<nav>
 			<div class="container">
 				<div class="wrapper">
-                                    <h1><a href="index.php"><strong>Resume Extractor</strong></a></h1>
+					<h1><a href="index.php"><strong>Resume Extraction</strong></a></h1>
 					<ul>
-                                            <?php 
-                                            if(isset($_SESSION['user_type']))
-                                            {
-                                            print '<li><a href="logout.php" class="current">logout</a></li>';
-
-                                            }
-                                            ?>
+						<li><a href="index.php" class="current">Login</a></li>
 						
-						
-					</ul>
+         				</ul>
 				</div>
 			</div>
 		</nav>
 		<section class="adv-content">
 			<div class="container">
 				<ul class="breadcrumbs">
-					<li>Home</li>
+                                    <li><strong> Please select your requirement from the following list</strong></li>
 				</ul>
-                            <form <form action="" id="search-form">
-					<fieldset>
-						<input type="text" value=""><input type="submit" value="">
-					</fieldset>
-				</form>
-			</div>
-		</section><div class="ic">More Website Templates at TemplateMonster.com!</div>
-	</header>
-	<section id="content">
-	<div class="top">
-			<div class="container">
-		<form action=""
-enctype="multipart/form-data" method="post">
-
-<p>
-Please upload a resume:<br>
-<input type="file" name="file" size="40">
-</p>
-<div>
-<input type="submit" value="Send">
-</div>
-</form>
-</div>
-</div>
-	</section>
-	<footer>
-		<div class="container">
-			<div class="wrapper">
-				<div class="copy"></div>
 				
 			</div>
-		</div>
+		
+	</header>
+	<section id="content">
+		<div class="top">
+			<div class="container">
+				<section>
+                                    <div id="add_field">
+                                        <form id="search" action="search.php" method="get" >                                  	 
+         <label>Select Your Requirements:</label><br><br>
+    
+         
+                                    <br>
+                                        <input type="submit" value="search" name="submit" />
+                                        </form>
+                                         </div>
+                                    
+	 </section>
+				</div>
+			</div>
+		
+	</section>
+	<footer>
+		
 	</footer>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.pics').cycle({
-				fx: 'toss',
-				next:	 '#next', 
-				prev:	 '#prev' 
-			});
-			
-			// Datepicker
-			$('#datepicker').datepicker({
-				inline: true
-			});
-			
-		});
-	</script>
-			
+	
+
+</body>
+</html>

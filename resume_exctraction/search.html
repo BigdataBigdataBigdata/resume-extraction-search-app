@@ -27,7 +27,7 @@
 		<nav>
 			<div class="container">
 				<div class="wrapper">
-					<h1><a href="index.html"><strong>Resume Extraction</strong></a></h1>
+					<h1><a href="index.php"><strong>Resume Extraction</strong></a></h1>
 					<ul>
 						<li><a href="index.php" class="current">Login</a></li>
 						
@@ -49,30 +49,24 @@
 			<div class="container">
 				<section>
                                     <div id="add_field">
-                                              	 
-         <label>Select Your Requirements:</label><br>
-    <select id="select" name="formRequire" selected="selected"  required>
-             <option value="first_name">First Name</option>
-             <option value="last_name">Last Name</option>
-             <option value="email">email</option>
-             <option value="city">City</option>
-             
-             <option value="state">State</option>
-             <option value="zip">zip</option>
-             <option value="degree">Degree</option>
-             <option value="college">College</option>
-            
-             <option value="skills">Skills</option>
-             <option value="exp">experience</option>
-         </select>
-         
-         <input type="button"  value ="Add Field" onclick="add_field();"/>
-                        
-                                    </div>
+                                        <form id="search" action="search.php" method="get" >                                  	 
+         <label>Select Your Requirements:</label><br><br>
+    
+         <label>First Name</label><br><input type="text" name="first_name" /><br>
+         <label>Last Name</label><br><input type="text" name="last_name" /><br>
+         <label>Email</label><br><input type="text" name="email" /><br>
+        <label>City</label><br><input type="text" name="city" /><br>
+        <label>State</label><br><input type="text" name="state" /><br>
+        <label>Zip</label><br><input type="text" name="zip" /><br>
+        <label>Degree</label><br><input type="text" name="degree" /><br>
+        <label>College</label><br><input type="text" name="college" /><br>
+        <label>Skills</label><br><input type="text" name="skills" /><br>
+        <label>Experience</label><br><input type="text" name="exp" /><br>  
+                                    <br>
+                                        <input type="submit" value="search" name="submit" />
+                                        </form>
+                                         </div>
                                     
-                                  <form method="post" action="" id="fields">
-                                    <br><input type="submit" id="search" value="Search" />
-                                    </form>
 	 </section>
 				</div>
 			</div>
