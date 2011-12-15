@@ -1,0 +1,87 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/jquery-ui-1.8.5.custom.css" type="text/css" media="all">
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+        <script type="text/javascript" src="js/resume_search.js"></script>
+        <script>
+
+</script>
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="container">
+				<div class="wrapper">
+					<h1><a href="index.html"><strong>Resume Extraction</strong></a></h1>
+					<ul>
+						<li><a href="index.php" class="current">Login</a></li>
+						
+         				</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="adv-content">
+			<div class="container">
+				<ul class="breadcrumbs">
+                                    <li><strong> Please select your requirement from the following list</strong></li>
+				</ul>
+				
+			</div>
+		
+	</header>
+	<section id="content">
+		<div class="top">
+			<div class="container">
+				<section>
+                                    <div id="add_field">
+                                              	 
+         <label>Select Your Requirements:</label><br>
+    <select id="select" name="formRequire" selected="selected"  required>
+             <option value="first_name">First Name</option>
+             <option value="last_name">Last Name</option>
+             <option value="email">email</option>
+             <option value="city">City</option>
+             
+             <option value="state">State</option>
+             <option value="zip">zip</option>
+             <option value="degree">Degree</option>
+             <option value="college">College</option>
+            
+             <option value="skills">Skills</option>
+             <option value="exp">experience</option>
+         </select>
+         
+         <input type="button"  value ="Add Field" onclick="add_field();"/>
+                        
+                                    </div>
+                                    
+                                  <form method="post" action="" id="fields">
+                                    <br><input type="submit" id="search" value="Search" />
+                                    </form>
+	 </section>
+				</div>
+			</div>
+		
+	</section>
+	<footer>
+		
+	</footer>
+	
+
+</body>
+</html>
