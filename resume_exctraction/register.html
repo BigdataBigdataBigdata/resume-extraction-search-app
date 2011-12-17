@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/jquery-ui-1.8.5.custom.css" type="text/css" media="all">
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+        <script type="text/javascript" src="js/validation.js" ></script>
 	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
 	<!--[if lt IE 9]>
@@ -44,7 +45,7 @@
 		<div class="top">
 			<div class="container">
 				<section>
-	 <form method="POST" action="register.php" enctype="application/x-www-form-urlencoded">
+	 <form method="POST" action="register.php" enctype="application/x-www-form-urlencoded" onsubmit ="return validate_registration() ">
             
                  
              <label>   User Name </label><br>
@@ -56,10 +57,11 @@
                      <br>
                 <label> Email id </label>
                 <br>
-                     <input type="text" name="email" id="email" value="" required/>
+
+                <input type="email" name="email" id="email" value="" required/>
                      <br>
                      <br>
-              <input type="submit" name="register" id="register" value="Register"/>
+              <input type="submit" name="register" id="register" value="Register" />
               
                      <input type="reset" name="reset" id="Reset" />
 	 </form>
