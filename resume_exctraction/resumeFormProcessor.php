@@ -46,28 +46,28 @@ if(isset($_POST['email'])!= null)
 
 if(isset($_POST['company-name'])!= null)
 {
-    $company['company-name'] = $_POST['company-name'];
+    $company['company_name'] = $_POST['company-name'];
 }
 
 if(isset($_POST['experience'])!= null)
 {
-    $company['experience'] = $_POST['experience'];
+    $company['years'] = $_POST['experience'];
 }
 
 if(isset($_POST['job-title'])!= null)
 {
-    $company['job-title'] = $_POST['job-title'];
+    $company['job_title'] = $_POST['job-title'];
 }
 
 
 if(isset($_POST['job-description'])!= null)
 {
-    $company['job-description'] = $_POST['job-description'];
+    $company['job_description'] = $_POST['job-description'];
 }
 
 if(isset($_POST['education'])!= null)
 {
-    $school['education'] = $_POST['education'];
+    $school['degree'] = $_POST['education'];
 }
 
 if(isset($_POST['school'])!= null)
@@ -75,12 +75,17 @@ if(isset($_POST['school'])!= null)
     $school['school'] = $_POST['school'];
 }
 
-if(isset($_POST['school'])!= null)
+if(isset($_POST['school-dates'])!= null)
 {
-    $school['school-dates'] = $_POST['school-dates'];
+    $school['dates'] = $_POST['school-dates'];
 }
 
 $res->skills[] = $_POST["skills"];
+
+$res->company = $company;
+$res->school = $school;
+
 var_dump($res);
 
+$res->buildResume("doc");
 ?>

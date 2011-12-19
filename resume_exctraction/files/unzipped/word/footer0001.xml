@@ -2,10 +2,10 @@
 <w:ftr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w10="urn:schemas-microsoft-com:office:word">
 	<w:p>
 		<w:pPr>
-			<w:pStyle w:val="Footer"/>
+			<w:pStyle w:val="footer"/>
 			<w:tabs>
 				<w:tab w:val="left" w:pos="10080"/>
-				<w:tab w:val="left" w:pos="10800"/>
+				<w:tab w:val="left" w:pos="10439"/>
 				<w:tab w:val="left" w:pos="11520"/>
 				<w:tab w:val="left" w:pos="12240"/>
 				<w:tab w:val="left" w:pos="12960"/>

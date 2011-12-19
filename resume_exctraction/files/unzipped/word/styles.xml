@@ -73,10 +73,10 @@
 			<w:sz w:val="20"/>
 		</w:rPr>
 	</w:style>
-	<w:style w:type="paragraph" w:styleId="Header">
-		<w:name w:val="Header"/>
+	<w:style w:type="paragraph" w:styleId="header">
+		<w:name w:val="header"/>
 		<w:basedOn w:val="Normal"/>
-		<w:next w:val="Header"/>
+		<w:next w:val="header"/>
 		<w:qFormat/>
 		<w:pPr>
 			<w:tabs>
@@ -86,10 +86,10 @@
 		</w:pPr>
 		<w:rPr/>
 	</w:style>
-	<w:style w:type="paragraph" w:styleId="Footer">
-		<w:name w:val="Footer"/>
+	<w:style w:type="paragraph" w:styleId="footer">
+		<w:name w:val="footer"/>
 		<w:basedOn w:val="Normal"/>
-		<w:next w:val="Footer"/>
+		<w:next w:val="footer"/>
 		<w:qFormat/>
 		<w:pPr>
 			<w:tabs>
@@ -134,8 +134,11 @@
 				<w:ilvl w:val="0"/>
 				<w:numId w:val="1"/>
 			</w:numPr>
+			<w:tabs>
+				<w:tab w:val="left" w:pos="360"/>
+			</w:tabs>
 			<w:spacing w:before="180" w:after="180"/>
-			<w:ind w:left="1080" w:hanging="360"/>
+			<w:ind w:left="360" w:hanging="360"/>
 			<w:jc w:val="both"/>
 		</w:pPr>
 		<w:rPr>
@@ -153,8 +156,11 @@
 				<w:ilvl w:val="0"/>
 				<w:numId w:val="0"/>
 			</w:numPr>
+			<w:tabs>
+				<w:tab w:val="clear" w:pos="360"/>
+			</w:tabs>
 			<w:spacing w:before="0" w:after="0"/>
-			<w:ind w:firstLine="0"/>
+			<w:ind w:left="1080" w:firstLine="0"/>
 			<w:jc w:val="center"/>
 		</w:pPr>
 		<w:rPr/>
@@ -182,7 +188,7 @@
 	<w:style w:type="paragraph" w:styleId="Location">
 		<w:name w:val="Location"/>
 		<w:basedOn w:val="Plain Text"/>
-		<w:next w:val="Plain Text"/>
+		<w:next w:val="Name"/>
 		<w:qFormat/>
 		<w:pPr/>
 		<w:rPr>
@@ -266,7 +272,7 @@
 	<w:style w:type="paragraph" w:styleId="Skills Info">
 		<w:name w:val="Skills Info"/>
 		<w:basedOn w:val="Plain Text"/>
-		<w:next w:val="Plain Text"/>
+		<w:next w:val="Name"/>
 		<w:qFormat/>
 		<w:pPr/>
 		<w:rPr>
@@ -274,10 +280,10 @@
 			<w:sz w:val="19"/>
 		</w:rPr>
 	</w:style>
-	<w:style w:type="paragraph" w:styleId="Heading 1">
-		<w:name w:val="Heading 1"/>
+	<w:style w:type="paragraph" w:styleId="heading 1">
+		<w:name w:val="heading 1"/>
 		<w:basedOn w:val="Normal"/>
-		<w:next w:val="Normal"/>
+		<w:next w:val="header"/>
 		<w:qFormat/>
 		<w:pPr>
 			<w:keepNext/>
@@ -289,10 +295,10 @@
 			<w:u w:val="single"/>
 		</w:rPr>
 	</w:style>
-	<w:style w:type="paragraph" w:styleId="Heading 2">
-		<w:name w:val="Heading 2"/>
+	<w:style w:type="paragraph" w:styleId="heading 2">
+		<w:name w:val="heading 2"/>
 		<w:basedOn w:val="Normal"/>
-		<w:next w:val="Normal"/>
+		<w:next w:val="header"/>
 		<w:qFormat/>
 		<w:pPr>
 			<w:keepNext/>
@@ -306,10 +312,10 @@
 			<w:u w:val="single"/>
 		</w:rPr>
 	</w:style>
-	<w:style w:type="paragraph" w:styleId="Heading 3">
-		<w:name w:val="Heading 3"/>
+	<w:style w:type="paragraph" w:styleId="heading 3">
+		<w:name w:val="heading 3"/>
 		<w:basedOn w:val="Normal"/>
-		<w:next w:val="Normal"/>
+		<w:next w:val="header"/>
 		<w:qFormat/>
 		<w:pPr>
 			<w:keepNext/>
@@ -323,10 +329,10 @@
 			<w:sz w:val="22"/>
 		</w:rPr>
 	</w:style>
-	<w:style w:type="paragraph" w:styleId="Heading 5">
-		<w:name w:val="Heading 5"/>
+	<w:style w:type="paragraph" w:styleId="heading 5">
+		<w:name w:val="heading 5"/>
 		<w:basedOn w:val="Normal"/>
-		<w:next w:val="Normal"/>
+		<w:next w:val="header"/>
 		<w:qFormat/>
 		<w:pPr>
 			<w:keepNext/>
@@ -336,10 +342,10 @@
 			<w:u w:val="single"/>
 		</w:rPr>
 	</w:style>
-	<w:style w:type="paragraph" w:styleId="Heading 6">
-		<w:name w:val="Heading 6"/>
+	<w:style w:type="paragraph" w:styleId="heading 6">
+		<w:name w:val="heading 6"/>
 		<w:basedOn w:val="Normal"/>
-		<w:next w:val="Normal"/>
+		<w:next w:val="header"/>
 		<w:qFormat/>
 		<w:pPr>
 			<w:keepNext/>
@@ -352,10 +358,10 @@
 			<w:sz w:val="22"/>
 		</w:rPr>
 	</w:style>
-	<w:style w:type="paragraph" w:styleId="Heading 7">
-		<w:name w:val="Heading 7"/>
+	<w:style w:type="paragraph" w:styleId="heading 7">
+		<w:name w:val="heading 7"/>
 		<w:basedOn w:val="Normal"/>
-		<w:next w:val="Normal"/>
+		<w:next w:val="header"/>
 		<w:qFormat/>
 		<w:pPr>
 			<w:keepNext/>

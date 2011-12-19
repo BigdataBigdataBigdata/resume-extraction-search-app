@@ -33,6 +33,7 @@ $xpath->registerNamespace('w', "http://schemas.openxmlformats.org/wordprocessing
 
 $name_node = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='Name']");
 $name = $name_node->item(0)->parentNode->parentNode->nodeValue;
+$name = trim($name);
 $name_array = explode(' ',$name);
 $this->firstname = $name_array[0];
 $this->lastname = $name_array[1];
@@ -40,7 +41,9 @@ $this->lastname = $name_array[1];
 
 $address_node = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='Address']");
 $street_address = $address_node->item(0)->parentNode->parentNode->nodeValue;
+$street_address  = trim($street_address);
 $this->address = $street_address;
+
 //echo "street address" . $street_address;
 $city_zip_state = $address_node->item(1)->parentNode->parentNode->nodeValue;
 $city_zip_state_array = explode(',',$city_zip_state);
@@ -50,16 +53,18 @@ $this->state = $city_zip_state_array[2];
 //echo "street address" . $city_zip_state;
 $phone = $address_node->item(2)->parentNode->parentNode->nodeValue;
 $this->phone = $phone;
+$phone = trim($phone);
 //echo "street address" . $phone;
 $email = $address_node->item(3)->parentNode->parentNode->nodeValue;
 $this->email = $email;
+$email = trim($email);
 //echo "street address" . $email;
 
 $headings = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='BusinessNameDates']");
 foreach ($headings as $heading) {
 
     $company_name_dates_node = $heading->parentNode->parentNode;
-    $company_name_dates = $company_name_dates_node->nodeValue;
+    $company_name_dates = trim($company_name_dates_node->nodeValue);
     $company_name_dates_array = explode(",", $company_name_dates);
      $this->company[]['company_name']= $company_name_dates_array[0];
      $this->company[]['years'] = $company_name_dates_array[1];

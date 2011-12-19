@@ -35,7 +35,7 @@ if ($_FILES["file"]["error"] > 0)
 
     
 
-move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.zip");
+copy($upload_path,"files/1.zip");
       
       
       $zip = new ZipArchive;
@@ -70,7 +70,7 @@ $sucess = persist_resume($parser,$upload_path,$uid);
     $upload_path = $path.'/'.$_FILES["file"]["name"];
       move_uploaded_file($_FILES["file"]["tmp_name"],
       $upload_path);
-         move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.rtf");
+         copy($upload_path,"files/1.rtf");
          @convertToDocx("files/1.rtf",".rtf");
          $zip = new ZipArchive;
      $res = $zip->open('files/resume.zip');
@@ -99,7 +99,7 @@ $sucess = persist_resume($parser,$upload_path,$uid);
     $upload_path = $path.'/'.$_FILES["file"]["name"];
       move_uploaded_file($_FILES["file"]["tmp_name"],
       $upload_path);
-         move_uploaded_file($_FILES["file"]["tmp_name"],"files/1.doc");
+         copy($upload_path,"files/1.doc");
          convertToDocx("files/1.doc",".doc");
          $zip = new ZipArchive;
      $res = $zip->open('files/resume.zip');
