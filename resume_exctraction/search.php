@@ -71,40 +71,116 @@ require_once'include/bootstrap.php';
        $skills = $_GET['skills'];
        $exp = $_GET['exp'];
 
-       if(empty($skills))
+       $query = '';
+       if(!$_GET['first_name'] == null)
        {
-           if(empty ($exp))
-           {
-               echo 'no requirements founded';
-           }
-          else      
-           {
-             $query = "select * from resume where experince like '%$exp%'";     
-           }
-           
+         $query = "first_name = '$_GET[first_name]'";
        }
- else {
-           if(empty($exp))
-           {
-             $query = "select * from resume where skills like '%$skills%'";   
-           }
- else {
-         $query = "select * from resume where skills like '%$skills%' AND experience like '%$exp%'";      
-}
-}
-       
-       //$query = "select * from resume ";
-//       if(isset($first_name))
-//       {
-//           $query .= " first_name = '$first_name' ";
-//       }
-//        if(isset($last_name))
-//       {
-//           $query .= " last_name = '$last_name', ";
-//       }
 
-//       echo $query;
-       $result = mysql_query($query);
+       if(!$_GET['last_name'] == null)
+       {
+           if($query == null)
+         $query = "last_name = '$_GET[last_name]'";
+           else
+               $query .= ",last_name = '$_GET[last_name]'";
+       }
+
+          if(!$_GET['email'] == null)
+       {
+           if($query == null)
+         $query = "email = '$_GET[email]'";
+           else
+               $query .= ",email = '$_GET[email]'";
+       }
+
+          if(!$_GET['email'] == null)
+       {
+           if($query == null)
+         $query = "email = '$_GET[email]'";
+           else
+               $query .= ",email = '$_GET[email]'";
+       }
+
+          if(!$_GET['email'] == null)
+       {
+           if($query == null)
+         $query = "email = '$_GET[email]'";
+           else
+               $query .= ",email = '$_GET[email]'";
+       }
+
+          if(!$_GET['email'] == null)
+       {
+           if($query == null)
+         $query = "email = '$_GET[email]'";
+           else
+               $query .= ",email = '$_GET[email]'";
+       }
+
+          if(!$_GET['city'] == null)
+       {
+           if($query == null)
+         $query = "city = '$_GET[city]'";
+           else
+               $query .= ",city = '$_GET[city]'";
+       }
+
+
+          if(!$_GET['state'] == null)
+       {
+           if($query == null)
+         $query = "state = '$_GET[state]'";
+           else
+               $query .= ",state = '$_GET[state]'";
+       }
+
+
+          if(!$_GET['zip'] == null)
+       {
+           if($query == null)
+         $query = "zip = '$_GET[zip]'";
+           else
+               $query .= ",zip = '$_GET[zip]'";
+       }
+
+
+          if(!$_GET['degree'] == null)
+       {
+           if($query == null)
+         $query = "degree = '$_GET[degree]]'";
+           else
+               $query .= ",degree = '$_GET[degree]'";
+       }
+
+
+          if(!$_GET['college'] == null)
+       {
+           if($query == null)
+         $query = "college = '$_GET[college]'";
+           else
+               $query .= ",college = '$_GET[college]'";
+       }
+
+
+          if(!$_GET['skills'] == null)
+       {
+           if($query == null)
+         $query = "skills like '%$_GET[skills]%'";
+           else
+               $query .= ",skills like '%$_GET[skills]%'";
+       }
+
+          if(!$_GET['exp'] == null)
+       {
+           if($query == null)
+         $query = "experience = '$_GET[exp]'";
+           else
+               $query .= ",experience = '$_GET[exp]'";
+       }
+       $query = "select * from resume where ".$query;
+echo $query;
+    $result = mysql_query($query);
+    var_dump($result);
        print '<table><tr><th>First Name</th>
            <th>Last Name</th>
            <th>Email</th>
