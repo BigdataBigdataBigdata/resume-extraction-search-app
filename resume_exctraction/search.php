@@ -60,18 +60,40 @@
                                     <div id="add_field">
                                        <?php
 require_once'include/bootstrap.php';
-$first_name = trim($_GET['first_name']);
-       $last_name = $_GET['last_name'];
-       $email = $_GET['email'];
-       $city = $_GET['city'];
-       $state =$_GET['state'];
-       $zip = $_GET['zip'];
-       $degree = $_GET['degree'];
-       $college =$_GET['college'];
+//$first_name = trim($_GET['first_name']);
+  //     $last_name = $_GET['last_name'];
+    //   $email = $_GET['email'];
+      // $city = $_GET['city'];
+       //$state =$_GET['state'];
+       //$zip = $_GET['zip'];
+       //$degree = $_GET['degree'];
+       //$college =$_GET['college'];
        $skills = $_GET['skills'];
        $exp = $_GET['exp'];
 
-       $query = "select * from resume ";
+       if(empty($skills))
+       {
+           if(empty ($exp))
+           {
+               echo 'no requirements founded';
+           }
+          else      
+           {
+             $query = "select * from resume where experince like '%$exp%'";     
+           }
+           
+       }
+ else {
+           if(empty($exp))
+           {
+             $query = "select * from resume where skills like '%$skills%'";   
+           }
+ else {
+         $query = "select * from resume where skills like '%$skills%' AND experience like '%$exp%'";      
+}
+}
+       
+       //$query = "select * from resume ";
 //       if(isset($first_name))
 //       {
 //           $query .= " first_name = '$first_name' ";
