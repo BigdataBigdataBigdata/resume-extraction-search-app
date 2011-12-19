@@ -41,7 +41,7 @@ date_default_timezone_set('Europe/Berlin');
 // SAMPLE #1 - License Agreement
 //
 
-print('Starting sample #1 (license-agreement)...');
+
 
 // Instantiate SOAP object and log into LiveDocx
 
@@ -81,7 +81,7 @@ $fieldValues = array (
     'years' => $this->company['years'],
     'job_title' => $this->company['job_title'],
     'job_description' => $this->company['job_description'],
-    'degree' => $this->school['education'],
+    'degree' => $this->school['degree'],
 'school' => $this->school['school'],
     'school_dates' => $this->school['dates'],
     'skills' => $this->skills[0]
@@ -108,9 +108,9 @@ $result = $soap->RetrieveDocument(
 
 $data = $result->RetrieveDocumentResult;
 
-file_put_contents('license-agreement-document.'.$format.'', base64_decode($data));
+file_put_contents('resume.'.$format.'', base64_decode($data));
 
-
+return "resume.".$format;
 
 
 $soap->LogOut();
