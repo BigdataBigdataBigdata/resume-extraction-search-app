@@ -1,25 +1,86 @@
 <?php
 require_once'include/bootstrap.php';
 require_once 'Resume.php';
-var_dump($_POST);
-//$res = new Resume($uid);
-//$res->firstname = $_POST["first-name"];
-//$res->lastname = $_POST["last-name"];
-//$res->address = $_POST["address"];
-//$res->city = $_POST["city"];
-//$res->state = $_POST["state"];
-//$res->zip = $_POST["zip"];
-//$res->phone = $_POST["phone"];
-//$res->email = $_POST["email"];
-//$res->company[][companyname]=$_POST["company-name"];
-//$res->company[][experience]=$_POST["experience-years"];
-//$res->company[][jobtitle]=$_POST["job-title"];
-//$res->company[][jobdesc]=$_POST["job-discription"];
-//$res->school[][education]=$_POST["education"];
-//$res->school[][schoolname]=$_POST["school"];
-//$res->school[][attandance]=$_POST["school-atandance"];
-//$res->awards[][] = $_POST["awards"];
-//$res->skills[][] = $_POST["skills"];
+
+
+$res = new Resume($uid);
+if($_POST['first-name'] != null)
+{
+   
+    $res->firstname = $_POST['first-name'];
+}
+if($_POST['last-name']!= null)
+{
+   
+    $res->lastname = $_POST['last-name'];
+}
+
+if(isset($_POST['address']) != null)
+{
+    $res->address = $_POST['address'];
+}
+if(isset($_POST['city'])!= null)
+{
+    $res->city = $_POST['city'];
+}
+if(isset($_POST['state'])!= null)
+{
+    $res->state= $_POST['state'];
+}
+
+if(isset($_POST['zip'])!= null)
+{
+    $res->zip = $_POST['zip'];
+}
+
+
+if(isset($_POST['phone'])!= null)
+{
+    $res->phone = $_POST['phone'];
+}
+
+if(isset($_POST['email'])!= null)
+{
+    $res->email = $_POST['email'];
+}
+
+if(isset($_POST['company-name'])!= null)
+{
+    $company['company-name'] = $_POST['company-name'];
+}
+
+if(isset($_POST['experience'])!= null)
+{
+    $company['experience'] = $_POST['experience'];
+}
+
+if(isset($_POST['job-title'])!= null)
+{
+    $company['job-title'] = $_POST['job-title'];
+}
+
+
+if(isset($_POST['job-description'])!= null)
+{
+    $company['job-description'] = $_POST['job-description'];
+}
+
+if(isset($_POST['education'])!= null)
+{
+    $school['education'] = $_POST['education'];
+}
+
+if(isset($_POST['school'])!= null)
+{
+    $school['school'] = $_POST['school'];
+}
+
+if(isset($_POST['school'])!= null)
+{
+    $school['school-dates'] = $_POST['school-dates'];
+}
+
+$res->skills[] = $_POST["skills"];
 var_dump($res);
 
 ?>

@@ -31,6 +31,12 @@ require_once('include/bootstrap.php');
                                             print '<li><a href="logout.php" class="current">logout</a></li>';
 
                                             }
+                                          
+                                            if($_SESSION['uid'] == 1)
+                                            {
+                                            print '<li><a href="search_form.php" class="current">Search Resumes</a></li>';
+
+                                            }
                                             ?>
 						
 						
@@ -43,11 +49,7 @@ require_once('include/bootstrap.php');
 				<ul class="breadcrumbs">
 					<li>Home</li>
 				</ul>
-				<form action="" id="search-form">
-					<fieldset>
-						<input type="text" value=""><input type="submit" value="">
-					</fieldset>
-				</form>
+				
 			</div>
 		</section><div class="ic">More Website Templates at TemplateMonster.com!</div>
 	</header>

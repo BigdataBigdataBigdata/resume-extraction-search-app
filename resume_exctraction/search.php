@@ -1,22 +1,4 @@
-<?php 
-require_once'include/bootstrap.php';
-$first_name = $_GET['first_name'];
-       $last_name = $_GET['last_name'];
-       $email = $_GET['email'];
-       $city = $_GET['city'];
-       $state =$_GET['state'];
-       $zip = $_GET['zip'];
-       $degree = $_GET['degree'];
-       $college =$_GET['college'];
-       $skills = $_GET['skills'];
-       $exp = $_GET['exp'];  
-       
-       $query = "select * from resume";
-       if(isset($first_name))
-       {
-           $query .= "where first_name = '$first_name'";
-       }
-       $result = mysql_query($query);
+<?php require_once'include/bootstrap.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +28,19 @@ $first_name = $_GET['first_name'];
 				<div class="wrapper">
 					<h1><a href="index.php"><strong>Resume Extraction</strong></a></h1>
 					<ul>
-						<li><a href="index.php" class="current">Login</a></li>
+						 <?php
+                                            if(isset($_SESSION['user_type']))
+                                            {
+                                            print '<li><a href="logout.php" class="current">logout</a></li>';
+
+                                            }
+
+                                            if($_SESSION['uid'] == 1)
+                                            {
+                                            print '<li><a href="search_form.php" class="current">Search Resumes</a></li>';
+
+                                            }
+                                            ?>
 						
          				</ul>
 				</div>
@@ -54,9 +48,7 @@ $first_name = $_GET['first_name'];
 		</nav>
 		<section class="adv-content">
 			<div class="container">
-				<ul class="breadcrumbs">
-                                    <li><strong> Please select your requirement from the following list</strong></li>
-				</ul>
+				
 				
 			</div>
 		
@@ -66,13 +58,49 @@ $first_name = $_GET['first_name'];
 			<div class="container">
 				<section>
                                     <div id="add_field">
-                                        <form id="search" action="search.php" method="get" >                                  	 
-         <label>Select Your Requirements:</label><br><br>
-    
-         
-                                    <br>
-                                        <input type="submit" value="search" name="submit" />
-                                        </form>
+                                       <?php
+require_once'include/bootstrap.php';
+$first_name = trim($_GET['first_name']);
+       $last_name = $_GET['last_name'];
+       $email = $_GET['email'];
+       $city = $_GET['city'];
+       $state =$_GET['state'];
+       $zip = $_GET['zip'];
+       $degree = $_GET['degree'];
+       $college =$_GET['college'];
+       $skills = $_GET['skills'];
+       $exp = $_GET['exp'];
+
+       $query = "select * from resume ";
+//       if(isset($first_name))
+//       {
+//           $query .= " first_name = '$first_name' ";
+//       }
+//        if(isset($last_name))
+//       {
+//           $query .= " last_name = '$last_name', ";
+//       }
+
+//       echo $query;
+       $result = mysql_query($query);
+       print '<table><tr><th>First Name</th>
+           <th>Last Name</th>
+           <th>Email</th>
+           <th>City</th>
+           <th>State</th>
+           <th>Download Resume</th></tr>';
+       while($row = mysql_fetch_array($result))
+       {
+           print "<tr><td>".$row['first_name']."</td>
+               <td>".$row['last_name']."</td>
+                   <td>".$row['email']."</td>
+                       <td>".$row['city']."</td>
+                           <td>".$row['state']."</td>
+                                 <td><a href='".$row['location']."'
+                                     > Dowonload here </a></td>
+               </tr>";
+       }
+?>
                                          </div>
                                     
 	 </section>
