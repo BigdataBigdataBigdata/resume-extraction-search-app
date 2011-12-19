@@ -82,7 +82,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "last_name = '$_GET[last_name]'";
            else
-               $query .= ",last_name = '$_GET[last_name]'";
+               $query .= "and last_name = '$_GET[last_name]'";
        }
 
           if(!$_GET['email'] == null)
@@ -90,31 +90,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "email = '$_GET[email]'";
            else
-               $query .= ",email = '$_GET[email]'";
-       }
-
-          if(!$_GET['email'] == null)
-       {
-           if($query == null)
-         $query = "email = '$_GET[email]'";
-           else
-               $query .= ",email = '$_GET[email]'";
-       }
-
-          if(!$_GET['email'] == null)
-       {
-           if($query == null)
-         $query = "email = '$_GET[email]'";
-           else
-               $query .= ",email = '$_GET[email]'";
-       }
-
-          if(!$_GET['email'] == null)
-       {
-           if($query == null)
-         $query = "email = '$_GET[email]'";
-           else
-               $query .= ",email = '$_GET[email]'";
+               $query .= " and email = '$_GET[email]'";
        }
 
           if(!$_GET['city'] == null)
@@ -122,7 +98,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "city = '$_GET[city]'";
            else
-               $query .= ",city = '$_GET[city]'";
+               $query .= " and city = '$_GET[city]'";
        }
 
 
@@ -131,7 +107,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "state = '$_GET[state]'";
            else
-               $query .= ",state = '$_GET[state]'";
+               $query .= "and state = '$_GET[state]'";
        }
 
 
@@ -140,7 +116,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "zip = '$_GET[zip]'";
            else
-               $query .= ",zip = '$_GET[zip]'";
+               $query .= "and zip = '$_GET[zip]'";
        }
 
 
@@ -149,7 +125,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "degree = '$_GET[degree]]'";
            else
-               $query .= ",degree = '$_GET[degree]'";
+               $query .= "and degree = '$_GET[degree]'";
        }
 
 
@@ -158,7 +134,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "college = '$_GET[college]'";
            else
-               $query .= ",college = '$_GET[college]'";
+               $query .= "and college = '$_GET[college]'";
        }
 
 
@@ -167,7 +143,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "skills like '%$_GET[skills]%'";
            else
-               $query .= ",skills like '%$_GET[skills]%'";
+               $query .= "and skills like '%$_GET[skills]%'";
        }
 
           if(!$_GET['exp'] == null)
@@ -175,12 +151,22 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "experience = '$_GET[exp]'";
            else
-               $query .= ",experience = '$_GET[exp]'";
+               $query .= " and experience = '$_GET[exp]'";
        }
        $query = "select * from resume where ".$query;
-echo $query;
+
+       echo $query;
     $result = mysql_query($query);
-    var_dump($result);
+  
+    if($result === false)
+    {
+        echo 'there are no results for your search. Please try another search <a href="search_form.php" >here</a>';
+    }
+    else{
+       if(mysql_num_rows($result) == 0)
+       {
+           echo "0 matching resumes found";
+       }
        print '<table><tr><th>First Name</th>
            <th>Last Name</th>
            <th>Email</th>
@@ -197,7 +183,11 @@ echo $query;
                                  <td><a href='".$row['location']."'
                                      > Dowonload here </a></td>
                </tr>";
+       
        }
+       print'  <a href="search_form.php" >Click here for another search</a>';
+    }
+     
 ?>
                                          </div>
                                     
