@@ -39,9 +39,9 @@ if ($file_extention === 'docx') {
 
         $parser = new parseDocx('files/unzipped/word/document.xml');
 
-        $sucess = persist_resume($parser, $upload_path, $uid);
+        $sucess = @persist_resume($parser, $upload_path, $uid);
     } else {
-        $failed = true;
+        $error = "unable to parse the file. Please make sure it follows the required fromat";
     }
 }
 

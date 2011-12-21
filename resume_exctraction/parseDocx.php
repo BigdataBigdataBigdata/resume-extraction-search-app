@@ -76,6 +76,65 @@ $job_title_dicription_array = explode(',',$job_title_dicription);
 
 $resume_headings_list = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='ResumeHeadings']");
 
+
+if($resume_headings_list->length == 0)
+{
+   $resume_headings_list = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='Resume Headings']");
+
+
+foreach($resume_headings_list as $heading)
+{
+
+   $heading_node = $heading->parentNode->parentNode;
+
+
+   if(trim($heading_node->nodeValue) === 'Education')
+   {
+
+       $next_node = $heading_node->nextSibling->nextSibling;
+       $degreeSchool =  $next_node->nodeValue;
+       $degreeSchoolArray = explode(",",$degreeSchool);
+       $this->school['degree'] = trim($degreeSchoolArray[0]);
+       $this->school['school'] = trim($degreeSchoolArray[1]);
+       $second_next_node = $next_node->nextSibling;
+        $this->school['dates'] =  trim($second_next_node->nodeValue);
+   }
+
+   if(trim($heading_node->nodeValue) === 'Achievements/Awards')
+   {
+
+       $next_node = $heading_node->nextSibling;
+       $next_node = $next_node->nextSibling;
+       while(trim($next_node->nodeValue) != 'Skills')
+       {
+           $this->awards[] = trim($next_node->nodeValue);
+
+           $next_node = $next_node->nextSibling;
+       }
+   }
+
+   if(trim($heading_node->nodeValue) === 'Skills')
+   {
+       $next_node = $heading_node->nextSibling;
+       $next_node = $next_node->nextSibling;
+        $next_node->nodeValue;
+       while(trim($next_node->nodeValue) != null)
+       {
+           $this->skills[]= trim($next_node->nodeValue);
+
+           if($next_node->nodeName === 'w:p'){
+        $next_node = $next_node->nextSibling;
+                  }
+ else {
+    $next_node= null;
+}
+       }
+   }
+
+}
+}
+else
+{
 foreach($resume_headings_list as $heading)
 {
    
@@ -129,6 +188,7 @@ foreach($resume_headings_list as $heading)
    
 }
 }
+    }
 }
 
 
