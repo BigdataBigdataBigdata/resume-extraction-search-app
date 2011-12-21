@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ds:datastoreItem ds:itemID="{C54C0A63-3719-4FA1-8F11-9DD261C30B8C}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml"><ds:schemaRefs><ds:schemaRef ds:uri="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms"/></ds:schemaRefs></ds:datastoreItem>
+<ds:datastoreItem ds:itemID="{C7599AE7-B56C-4857-8303-0396370BFCC1}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml"><ds:schemaRefs><ds:schemaRef ds:uri="http://www.w3.org/2001/XMLSchema"/><ds:schemaRef ds:uri="http://schemas.monster.com/Monster/Seeker/WordResumeTemplates"/></ds:schemaRefs></ds:datastoreItem>

@@ -280,11 +280,14 @@ function pdf2text($filename) {
     return getTextUsingTransformations($texts, $transformations);
 }
 
-
-$result = pdf2text ('resume.pdf');
+function readPdf($file){
+    $result = pdf2text ($file);
 $result = trim($result);
-$result_array = explode(' ',$result,6);
+$result_array = explode(' ',$result);
 
-var_dump($result_array);
-echo $result_array[1];
+$first_name =  $result_array[0];
+echo  $result_array[0];
+
+}
+
 ?>

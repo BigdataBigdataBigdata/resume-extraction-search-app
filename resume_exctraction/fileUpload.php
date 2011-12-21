@@ -4,6 +4,7 @@ require_once 'parseDocx.php';
 require_once 'parseDoc.php';
 require_once 'ToDocx.php';
 require_once 'Resume.php';
+require_once 'readPdf.php';
 
 
 $sucess = false;
@@ -19,23 +20,15 @@ if ($_FILES["file"]["error"] > 0)
   $file_extention = $file_name_explode_array[1];  
    if($file_extention === 'docx')
       {
-       if(is_dir('files/'.$uid.'/'.session_id()))
-       {
-           $path = 'files/'.$uid.'/'.session_id().'/'.rand();
-       }
- else {
- {
-     $path = 'files/'.$uid.'/'.session_id();
- }
-       }
-       mkdir($path);
-       $upload_path = $path.'/'.$_FILES["file"]["name"];
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      $upload_path);
+
+     $path = 'files';
+
+       $upload_path = $path.'/'.session_id().$_FILES["file"]["name"];
+     @move_uploaded_file($_FILES["file"]["tmp_name"], $upload_path);
 
     
 
-copy($upload_path,"files/1.zip");
+@copy($upload_path,"files/1.zip");
       
       
       $zip = new ZipArchive;
@@ -58,18 +51,10 @@ $sucess = persist_resume($parser,$upload_path,$uid);
      
      if($file_extention === 'rtf')
      {
-         if(is_dir('files/'.$uid."/".session_id()))
-       {
-           $path = 'files/'.$uid."/".session_id().'/'.rand();
-       }
-       else
-       {
-           $path = 'files/'.$uid."/".session_id();
-       }
-       mkdir($path);
-    $upload_path = $path.'/'.$_FILES["file"]["name"];
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      $upload_path);
+     $path = 'files';
+
+       $upload_path = $path.'/'.session_id().$_FILES["file"]["name"];
+     var_dump(move_uploaded_file($_FILES["file"]["tmp_name"], $upload_path));
          copy($upload_path,"files/1.rtf");
          @convertToDocx("files/1.rtf",".rtf");
          $zip = new ZipArchive;
@@ -87,18 +72,10 @@ $sucess = persist_resume($parser,$upload_path,$uid);
      
      if($file_extention === 'doc')
      {
-        if(is_dir('files/'.$uid."/".session_id()))
-       {
-           $path = 'files/'.$uid."/".session_id().'/'.rand();
-       }
-       else
-       {
-           $path = 'files/'.$uid."/".session_id();
-       }
-       mkdir($path);
-    $upload_path = $path.'/'.$_FILES["file"]["name"];
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      $upload_path);
+      $path = 'files';
+
+       $upload_path = $path.'/'.session_id().$_FILES["file"]["name"];
+     var_dump(move_uploaded_file($_FILES["file"]["tmp_name"], $upload_path));
          copy($upload_path,"files/1.doc");
          convertToDocx("files/1.doc",".doc");
          $zip = new ZipArchive;
@@ -118,10 +95,22 @@ $sucess = persist_resume($parser,$upload_path,$uid);
      
      
       }
+
+
+
+       if($file_extention === 'pdf')
+      {
+      $path = 'files';
+
+       $upload_path = $path.'/'.session_id().$_FILES["file"]["name"];
+     var_dump(move_uploaded_file($_FILES["file"]["tmp_name"], $upload_path));
+readPdf($upload_path);
+
+      }
       
-     function persist_resume($parser, $path)
+     function persist_resume($parser, $path, $uid)
      {
-          $uid = 1;
+          
           $res = new Resume($uid);
 $res->firstname = $parser->firstname;
 $res->lastname =  $parser->lastname;
@@ -203,7 +192,7 @@ $comp = serialize($res->company);
 $sucess = mysql_query("insert into experience (rid,experience) values ('$rid','$comp')");
 
  $sucess = mysql_query("update resume set location='$path' where rid = '$rid'");
- var_dump($sucess);
+
 
 if($sucess)
     return true;

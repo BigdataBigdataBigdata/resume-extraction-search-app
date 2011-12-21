@@ -21,34 +21,14 @@
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve">Rahul S</w:t>
+				<w:t xml:space="preserve">Your Name</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
-					<w:tab w:val="left" w:pos="1440"/>
-					<w:tab w:val="left" w:pos="2160"/>
-					<w:tab w:val="left" w:pos="2880"/>
-					<w:tab w:val="left" w:pos="3600"/>
-					<w:tab w:val="left" w:pos="4320"/>
-					<w:tab w:val="left" w:pos="5040"/>
-					<w:tab w:val="left" w:pos="5760"/>
-					<w:tab w:val="left" w:pos="6480"/>
-					<w:tab w:val="left" w:pos="7200"/>
-					<w:tab w:val="left" w:pos="7920"/>
-					<w:tab w:val="left" w:pos="8640"/>
-					<w:tab w:val="left" w:pos="9360"/>
-					<w:tab w:val="left" w:pos="10080"/>
-				</w:tabs></w:pPr>
-		</w:p>
-		<w:p>
-			<w:pPr>
-				<w:pStyle w:val="Address"/>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -64,14 +44,14 @@
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve"> Smls, AZ, slmsl</w:t>
+				<w:t xml:space="preserve">Street Address  </w:t>
 			</w:r>
 		</w:p>
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -87,14 +67,14 @@
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve">slmsl</w:t>
+				<w:t xml:space="preserve"> City, State, Zip Code </w:t>
 			</w:r>
 		</w:p>
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -110,10 +90,30 @@
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:rPr>
-					<w:b w:val="on"/>
-				</w:rPr>
-				<w:t xml:space="preserve">sravan.anumula@gmail.com</w:t>
+				<w:t xml:space="preserve">Phone Number</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Address"/>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+					<w:tab w:val="left" w:pos="10080"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">Email address</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -159,7 +159,7 @@
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve">Dlcmdlc, 3  years</w:t>
+				<w:t xml:space="preserve">Company Name, Dates of Employment</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -170,7 +170,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -185,7 +185,105 @@
 					<w:tab w:val="left" w:pos="9360"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve"> ss nks, e dked, </w:t>
+				<w:t xml:space="preserve">Job Title, description, responsibilities</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Business Name &amp; Dates"/>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+					<w:tab w:val="left" w:pos="10080"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">Company Name, Dates of Employment</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Overview bullets"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">Job Title, description, responsibilities</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Business Name &amp; Dates"/>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+					<w:tab w:val="left" w:pos="10080"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">Company Name, Dates of Employment</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Overview bullets"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">Job Title, description, responsibilities</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -219,7 +317,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -234,7 +332,134 @@
 					<w:tab w:val="left" w:pos="9360"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve">– villanoab ,mdskl</w:t>
+				<w:t xml:space="preserve">School Name – School City, State</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Overview bullets"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">Dates of attendance</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Resume Headings"/>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+					<w:tab w:val="left" w:pos="10080"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">Achievements/Awards</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Overview bullets"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">List employment, academic or other achievements</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Overview bullets"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">List employment, academic or other achievements</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Overview bullets"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">List employment, academic or other achievements</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -265,6 +490,33 @@
 				<w:pStyle w:val="Overview bullets"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+				</w:tabs></w:pPr>
+			<w:r>
+				<w:t xml:space="preserve">List computer, language or other personal skills here</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Overview bullets"/>
+				<w:widowControl w:val="off"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
 					<w:numId w:val="0"/>
 				</w:numPr>
 				<w:tabs>
@@ -281,12 +533,10 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-					<w:tab w:val="left" w:pos="10080"/>
-					<w:tab w:val="clear" w:pos="360"/>
 				</w:tabs>
-				<w:ind w:left="1080"/></w:pPr>
+				<w:jc w:val="left"/></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve">                     al,djd,jhdndkj,nndkjdj</w:t>
+				<w:t xml:space="preserve">List computer, language or other personal skills here</w:t>
 			</w:r>
 		</w:p>
 		<w:sectPr>
