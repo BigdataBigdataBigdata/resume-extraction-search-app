@@ -21,14 +21,34 @@
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve">Your Name</w:t>
+				<w:t xml:space="preserve"> </w:t>
 			</w:r>
 		</w:p>
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="1440"/>
+					<w:tab w:val="left" w:pos="2160"/>
+					<w:tab w:val="left" w:pos="2880"/>
+					<w:tab w:val="left" w:pos="3600"/>
+					<w:tab w:val="left" w:pos="4320"/>
+					<w:tab w:val="left" w:pos="5040"/>
+					<w:tab w:val="left" w:pos="5760"/>
+					<w:tab w:val="left" w:pos="6480"/>
+					<w:tab w:val="left" w:pos="7200"/>
+					<w:tab w:val="left" w:pos="7920"/>
+					<w:tab w:val="left" w:pos="8640"/>
+					<w:tab w:val="left" w:pos="9360"/>
+					<w:tab w:val="left" w:pos="10080"/>
+				</w:tabs></w:pPr>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Address"/>
+				<w:tabs>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -44,14 +64,14 @@
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
 			<w:r>
-				<w:t xml:space="preserve">Street Address  </w:t>
+				<w:t xml:space="preserve"> , , </w:t>
 			</w:r>
 		</w:p>
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -66,15 +86,12 @@
 					<w:tab w:val="left" w:pos="9360"/>
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
-			<w:r>
-				<w:t xml:space="preserve"> City, State, Zip Code </w:t>
-			</w:r>
 		</w:p>
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -89,32 +106,6 @@
 					<w:tab w:val="left" w:pos="9360"/>
 					<w:tab w:val="left" w:pos="10080"/>
 				</w:tabs></w:pPr>
-			<w:r>
-				<w:t xml:space="preserve">Phone Number</w:t>
-			</w:r>
-		</w:p>
-		<w:p>
-			<w:pPr>
-				<w:pStyle w:val="Address"/>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="720"/>
-					<w:tab w:val="left" w:pos="1440"/>
-					<w:tab w:val="left" w:pos="2160"/>
-					<w:tab w:val="left" w:pos="2880"/>
-					<w:tab w:val="left" w:pos="3600"/>
-					<w:tab w:val="left" w:pos="4320"/>
-					<w:tab w:val="left" w:pos="5040"/>
-					<w:tab w:val="left" w:pos="5760"/>
-					<w:tab w:val="left" w:pos="6480"/>
-					<w:tab w:val="left" w:pos="7200"/>
-					<w:tab w:val="left" w:pos="7920"/>
-					<w:tab w:val="left" w:pos="8640"/>
-					<w:tab w:val="left" w:pos="9360"/>
-					<w:tab w:val="left" w:pos="10080"/>
-				</w:tabs></w:pPr>
-			<w:r>
-				<w:t xml:space="preserve">Email address</w:t>
-			</w:r>
 		</w:p>
 		<w:p>
 			<w:pPr>
@@ -170,7 +161,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -219,7 +210,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -268,7 +259,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -317,7 +308,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -343,7 +334,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -392,7 +383,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -418,7 +409,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -444,7 +435,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -493,7 +484,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -514,13 +505,12 @@
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Overview bullets"/>
-				<w:widowControl w:val="off"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
 					<w:numId w:val="0"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -533,8 +523,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:jc w:val="left"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">List computer, language or other personal skills here</w:t>
 			</w:r>

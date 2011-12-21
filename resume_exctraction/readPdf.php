@@ -280,14 +280,19 @@ function pdf2text($filename) {
     return getTextUsingTransformations($texts, $transformations);
 }
 
-function readPdf($file){
+function readPdf($file,$uid){
+    require_once 'include/database.php ';
     $result = pdf2text ($file);
 $result = trim($result);
 $result_array = explode(' ',$result);
 
-$first_name =  $result_array[0];
-echo  $result_array[0];
-
+$first_name =  trim($result_array[0]);
+$last_name =  $result_array[1];
+$skills_array = explode('Skills', $result);
+$skills = $skills_array[1];
+if(mysql_query("insert into resume (uid,first_name,last_name,skills,location) values ('$uid','$first_name','$last_name','$skills','$file')"));
+{
+        return true;
 }
-
+}
 ?>
