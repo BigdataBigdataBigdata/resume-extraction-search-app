@@ -107,7 +107,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "state = '$_GET[state]'";
            else
-               $query .= "and state = '$_GET[state]'";
+               $query .= " and state = '$_GET[state]'";
        }
 
 
@@ -116,7 +116,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "zip = '$_GET[zip]'";
            else
-               $query .= "and zip = '$_GET[zip]'";
+               $query .= " and zip = '$_GET[zip]'";
        }
 
 
@@ -125,7 +125,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "degree = '$_GET[degree]]'";
            else
-               $query .= "and degree = '$_GET[degree]'";
+               $query .= " and degree = '$_GET[degree]'";
        }
 
 
@@ -134,7 +134,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "college = '$_GET[college]'";
            else
-               $query .= "and college = '$_GET[college]'";
+               $query .= " and college = '$_GET[college]'";
        }
 
 
@@ -143,7 +143,7 @@ require_once'include/bootstrap.php';
            if($query == null)
          $query = "skills like '%$_GET[skills]%'";
            else
-               $query .= "and skills like '%$_GET[skills]%'";
+               $query .= " and skills like '%$_GET[skills]%'";
        }
 
           if(!$_GET['exp'] == null)
@@ -155,7 +155,7 @@ require_once'include/bootstrap.php';
        }
        $query = "select * from resume where ".$query;
 
-       echo $query;
+       var_dump($query);
     $result = mysql_query($query);
   
     if($result === false)

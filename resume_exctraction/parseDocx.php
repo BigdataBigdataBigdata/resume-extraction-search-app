@@ -45,11 +45,11 @@ $street_address  = trim($street_address);
 $this->address = $street_address;
 
 //echo "street address" . $street_address;
-$city_zip_state = $address_node->item(1)->parentNode->parentNode->nodeValue;
+$city_zip_state = trim($address_node->item(1)->parentNode->parentNode->nodeValue);
 $city_zip_state_array = explode(',',$city_zip_state);
-$this->city = $city_zip_state_array[0];
-$this->zip = $city_zip_state_array[2];
-$this->state = $city_zip_state_array[1];
+$this->city = trim($city_zip_state_array[0]);
+$this->zip = trim($city_zip_state_array[2]);
+$this->state = trim($city_zip_state_array[1]);
 //echo "street address" . $city_zip_state;
 $phone = $address_node->item(2)->parentNode->parentNode->nodeValue;
 $this->phone = $phone;
@@ -66,13 +66,15 @@ foreach ($headings as $heading) {
     $company_name_dates_node = $heading->parentNode->parentNode;
     $company_name_dates = trim($company_name_dates_node->nodeValue);
     $company_name_dates_array = explode(",", $company_name_dates);
-     $this->company[]['company_name']= $company_name_dates_array[0];
-     $this->company[]['years'] = $company_name_dates_array[1];
+     $comp['company_name']= $company_name_dates_array[0];
+     $comp['years'] = $company_name_dates_array[1];
     $job_title_dicription = $company_name_dates_node->nextSibling->nodeValue;
 $job_title_dicription_array = explode(',',$job_title_dicription);
-    $this->company[]['job_title'] = $job_title_dicription_array[0];
-     $this->company[]['job_description'] = $job_title_dicription_array[1];
+    $comp['job_title'] = $job_title_dicription_array[0];
+     $comp['job_description'] = $job_title_dicription_array[1];
+     $this->company[] = $comp;
 }
+
 
 $resume_headings_list = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='ResumeHeadings']");
 

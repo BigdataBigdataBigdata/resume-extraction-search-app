@@ -78,24 +78,22 @@ require_once('include/bootstrap.php');
                               <th>email</th>
                               <th>Resume</th>
                               </tr>';
-                           while($row = mysql_fetch_array($result))
-  {
+                          $row = mysql_fetch_object($result);
+  
   print "<tr>
-       <td> ".$row['first_name']."</td>
-            <td>". $row['last_name']."</td>
-                 <td>". $row['address']."</td>
-                      <td>". $row['phone']."</td>
-                           <td>". $row['email'] ."</td>
-      <td> <a href=". $row['location']."> Click here to download</a></td>
-            <td>". $row['time'] ."</td>
+       <td> ".$row->first_name."</td>
+            <td>". $row->last_name."</td>
+                 <td>". $row->address."</td>
+                      <td>". $row->phone."</td>
+                           <td>". $row->email ."</td>
+      <td> <a href=". $row->location."> Click here to download</a></td>
             </tr>
   ";
-  }
+  
   print'</table> </br>';
  
   
-  if($result)
-                          {
+
       
       print '		<form action="fileUpload.php"
 enctype="multipart/form-data" method="post">
@@ -112,7 +110,7 @@ Please upload a resume:<br>
 </p>
 </form>';
       
-  }
+
                             ?>
 
 

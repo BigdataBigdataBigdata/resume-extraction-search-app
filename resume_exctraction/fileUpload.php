@@ -118,8 +118,9 @@ function persist_resume($parser, $path, $uid) {
     $res->skills = $parser->skills;
 
 
-    $parser->skills;
 
+    
+    
     if (mysql_query("insert into resume (uid) values ($res->uid)")) {
         $rid = mysql_insert_id();
         $school = $res->school;
@@ -173,9 +174,26 @@ function persist_resume($parser, $path, $uid) {
         }
 
         $sucess = mysql_query("update resume set experience = '$exp' where rid = '$rid'");
-        $comp = serialize($res->company);
-        $sucess = mysql_query("insert into experience (rid,experience) values ('$rid','$comp')");
+ 
 
+
+
+foreach($res->company as $comp)
+{
+
+    
+
+ $company_name = $comp['company_name'];
+ $years =  $comp['years'];
+ $job_description = $comp['job_description'];
+ $job_title = $comp['job_title'];
+     $sucess = mysql_query("insert into experience (rid,Clientname,Role,Responsibility,Start_date) values
+            ('$rid','$company_name','$job_title','$job_description','$years')");
+   
+}
+
+
+ 
         $sucess = mysql_query("update resume set location='$path' where rid = '$rid'");
 
 
