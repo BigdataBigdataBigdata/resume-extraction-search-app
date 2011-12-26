@@ -64,7 +64,9 @@ require_once('include/bootstrap.php');
                            print '<br />';   
                            print '</br>';
 
+                           
                            $result = mysql_query("select * from resume where uid = '$uid' order by time desc");
+                          
                            print '<h3 >Resumes in your profile</h3>';
                           print '<table >';
                           print '
@@ -90,10 +92,12 @@ require_once('include/bootstrap.php');
   ";
   }
   print'</table> </br>';
- nm
-                            ?>
-
-		<form action="fileUpload.php"
+ 
+  
+  if($result)
+                          {
+      
+      print '		<form action="fileUpload.php"
 enctype="multipart/form-data" method="post">
 
 <p>
@@ -106,7 +110,12 @@ Please upload a resume:<br>
 <p> Resume should follow <a href="http://office.microsoft.com/en-us/templates/basic-resume-template-TC102716871.aspx">this</a> format
     or you can use <a href="form.html">Resume Builder</a> to build your resume.
 </p>
-</form>
+</form>';
+      
+  }
+                            ?>
+
+
 </div>
 </div>
 	</section>

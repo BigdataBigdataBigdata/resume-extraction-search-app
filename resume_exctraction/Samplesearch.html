@@ -1,0 +1,31 @@
+<html>
+<head>
+<title></title>
+<script language="javascript">
+fields = 0;
+function addInput(test){
+if (fields != 10) {
+document.getElementById('text').innerHTML += "<input type='text' value='' name='test' /><br />";
+document.writeln(field[test]);
+fields += 1;
+} else {
+document.getElementById('text').innerHTML += "<br />Only 10 upload fields allowed.";
+document.form.add.disabled=true;
+}
+}
+</script>
+</head>
+<body>
+<form name="form" action="Sampleresult.php" method="post">
+  <select name='test'> <option>Firstname</option><option>LastName</option><option>City</option></select>   
+<input type="button" onclick="addInput(test)" name="add" value="Add input field" />
+
+<div id="text">
+Please select your requirement
+</div>
+
+<br />
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>
