@@ -64,7 +64,7 @@ require_once('include/bootstrap.php');
                            print '<br />';   
                            print '</br>';
 
-                           $result = mysql_query("select * from resume where uid = '$uid'");
+                           $result = mysql_query("select * from resume where uid = '$uid' order by time desc");
                            print '<h3 >Resumes in your profile</h3>';
                           print '<table >';
                           print '
@@ -84,12 +84,15 @@ require_once('include/bootstrap.php');
                  <td>". $row['address']."</td>
                       <td>". $row['phone']."</td>
                            <td>". $row['email'] ."</td>
-      <td> <a href=". $row['location']."> Click here to download</a></td></tr>
+      <td> <a href=". $row['location']."> Click here to download</a></td>
+            <td>". $row['time'] ."</td>
+            </tr>
   ";
   }
   print'</table> </br>';
-
+ nm
                             ?>
+
 		<form action="fileUpload.php"
 enctype="multipart/form-data" method="post">
 
