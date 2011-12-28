@@ -12,9 +12,17 @@ $pwd= md5($pwd);
 
 
 $sql = "INSERT INTO users (name,pass,mail) VALUES ('$uname','$pwd','$email')";
+$sqlemail = "Select * from users where mail='$email'"; 
 if (!mysql_query($sql))
   {
-     die('Error: ' . mysql_error());
+     if(!mysql_query($sqlemail))
+     {
+       die('Error: ' . mysql_error());  
+     }
+ else {
+         die( 'Email id is already exists');
+     }
+     
   }
   $uid = mysql_insert_id();
 $sq2 = "select * from users where mail=\"$email\"";                                                  
