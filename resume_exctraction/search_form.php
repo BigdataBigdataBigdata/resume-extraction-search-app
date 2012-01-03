@@ -76,7 +76,9 @@
         <label>Degree</label><br><input type="text" name="degree" /><br>
         <label>College</label><br><input type="text" name="college" /><br>
         <label>Skills</label><br><input type="text" name="skills" /><br>
-        <label>Experience</label><br><input type="text" name="exp" /><br>  
+        <label>Experience</label><br><input type="text" name="exp" /><br>
+        <label>job title</label><br><input type="text" name="job_title" /><br>
+
                                     <br>
                                         <input type="submit" value="search" name="submit"  />
                                         </form>

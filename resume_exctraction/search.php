@@ -153,9 +153,18 @@ require_once'include/bootstrap.php';
            else
                $query .= " and experience = '$_GET[exp]'";
        }
+
+                 if(!$_GET['job_title'] == null)
+       {
+           if($query == null)
+         $query = "job_title = '$_GET[job_title]'";
+           else
+               $query .= " and experience = '$_GET[exp]'";
+       }
+
+       
        $query = "select * from resume where ".$query;
 
-       var_dump($query);
     $result = mysql_query($query);
   
     if($result === false)
