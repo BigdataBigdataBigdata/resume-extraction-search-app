@@ -28,7 +28,7 @@
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -51,7 +51,7 @@
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -74,7 +74,7 @@
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -97,7 +97,7 @@
 			<w:pPr>
 				<w:pStyle w:val="Address"/>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="1080"/>
+					<w:tab w:val="left" w:pos="720"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -170,8 +170,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -184,8 +183,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">Job Title, description, responsibilities</w:t>
 			</w:r>
@@ -221,8 +219,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -235,8 +232,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">Job Title, description, responsibilities</w:t>
 			</w:r>
@@ -272,8 +268,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -286,8 +281,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">Job Title, description, responsibilities</w:t>
 			</w:r>
@@ -323,8 +317,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -337,8 +330,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">School Name – School City, State</w:t>
 			</w:r>
@@ -351,8 +343,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -365,8 +356,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">Dates of attendance</w:t>
 			</w:r>
@@ -402,8 +392,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -416,8 +405,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">List employment, academic or other achievements</w:t>
 			</w:r>
@@ -430,8 +418,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -444,8 +431,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">List employment, academic or other achievements</w:t>
 			</w:r>
@@ -458,8 +444,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -472,8 +457,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">List employment, academic or other achievements</w:t>
 			</w:r>
@@ -509,8 +493,7 @@
 					<w:numId w:val="2"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -523,8 +506,7 @@
 					<w:tab w:val="left" w:pos="7920"/>
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
-				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				</w:tabs></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">List computer, language or other personal skills here</w:t>
 			</w:r>
@@ -532,13 +514,13 @@
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Overview bullets"/>
+				<w:widowControl w:val="off"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
 					<w:numId w:val="0"/>
 				</w:numPr>
 				<w:tabs>
-					<w:tab w:val="left" w:pos="360"/>
-					<w:tab w:val="left" w:pos="720"/>
+					<w:tab w:val="left" w:pos="1080"/>
 					<w:tab w:val="left" w:pos="1440"/>
 					<w:tab w:val="left" w:pos="2160"/>
 					<w:tab w:val="left" w:pos="2880"/>
@@ -552,7 +534,7 @@
 					<w:tab w:val="left" w:pos="8640"/>
 					<w:tab w:val="left" w:pos="9360"/>
 				</w:tabs>
-				<w:ind w:left="360"/></w:pPr>
+				<w:jc w:val="left"/></w:pPr>
 			<w:r>
 				<w:t xml:space="preserve">List computer, language or other personal skills here</w:t>
 			</w:r>

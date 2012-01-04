@@ -21,7 +21,7 @@
 				<w:strike w:val="off"/>
 				<w:color w:val="auto"/>
 				<w:position w:val="0"/>
-				<w:sz w:val="19"/>
+				<w:sz w:val="14"/>
 				<w:u w:val="none"/>
 				<w:shd w:val="clear" w:fill="auto"/>
 			</w:rPr>
@@ -35,9 +35,9 @@
 			<w:suff w:val="tab"/>
 			<w:lvlText w:val=""/>
 			<w:pPr>
-				<w:ind w:left="360" w:hanging="360"/>
+				<w:ind w:left="1080" w:hanging="360"/>
 				<w:tabs>
-					<w:tab w:val="num" w:pos="360"/>
+					<w:tab w:val="num" w:pos="1080"/>
 				</w:tabs>
 			</w:pPr>
 			<w:rPr>
@@ -47,7 +47,7 @@
 				<w:strike w:val="off"/>
 				<w:color w:val="auto"/>
 				<w:position w:val="0"/>
-				<w:sz w:val="19"/>
+				<w:sz w:val="14"/>
 				<w:u w:val="none"/>
 				<w:shd w:val="clear" w:fill="auto"/>
 			</w:rPr>

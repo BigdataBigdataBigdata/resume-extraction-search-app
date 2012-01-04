@@ -118,6 +118,8 @@ function persist_resume($parser, $path, $uid) {
     $res->skills = $parser->skills;
 
 
+ 
+
 
     
     
@@ -181,18 +183,24 @@ function persist_resume($parser, $path, $uid) {
 foreach($res->company as $comp)
 {
 
-    
-
+    var_dump($comp['company_name']);
  $company_name = $comp['company_name'];
  $years =  $comp['years'];
  $job_description = $comp['job_description'];
  $job_title = $comp['job_title'];
-   
-   
-}
+
+
+// var_dump($company_name);
+// echo $years;
+// echo $job_description;
+// echo $job_title;
 
   $sucess = mysql_query("insert into experience (rid,Clientname,Role,Responsibility,Start_date) values
             ('$rid','$company_name','$job_title','$job_description','$years')");
+   
+}
+
+ 
 
  
         $sucess = mysql_query("update resume set location='$path' where rid = '$rid'");

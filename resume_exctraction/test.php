@@ -77,6 +77,7 @@ require_once('include/bootstrap.php');
                               <th>Pnone</th>
                               <th>email</th>
                               <th>Resume</th>
+                              <th>Status</th>
                               </tr>';
                           $row = mysql_fetch_object($result);
   
@@ -86,8 +87,18 @@ require_once('include/bootstrap.php');
                  <td>". $row->address."</td>
                       <td>". $row->phone."</td>
                            <td>". $row->email ."</td>
-      <td> <a href=". $row->location."> Click here to download</a></td>
-            </tr>
+                                      <td> <a href=". $row->location."> Click here to download</a></td>";
+
+  print"<td>";
+  if($row->status==1)
+          {
+   print"Active" ;
+          }
+          else
+          {
+              print " Not active";
+          }
+        print"  </td>  </tr>
   ";
   
   print'</table> </br>';

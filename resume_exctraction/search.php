@@ -157,13 +157,15 @@ require_once'include/bootstrap.php';
                  if(!$_GET['job_title'] == null)
        {
            if($query == null)
-         $query = "job_title = '$_GET[job_title]'";
+         $query = " role = '$_GET[job_title]'";
            else
-               $query .= " and experience = '$_GET[exp]'";
+               $query .= " and role = '$_GET[job_title]'";
        }
 
        
-       $query = "select * from resume where ".$query;
+       $query = "select * from resume inner join experience on resume.rid=experience.rid where ".$query;
+
+       var_dump($query);
 
     $result = mysql_query($query);
   

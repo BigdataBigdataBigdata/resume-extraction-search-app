@@ -52,16 +52,20 @@ $this->email = trim($address_node->item(3)->parentNode->parentNode->nodeValue);
 
 $headings = $xpath->query("//w:body/w:p/w:pPr/w:pStyle[@w:val='Business Name & Dates']");
 foreach ($headings as $heading) {
+
+  
     $company_name_dates_node = $heading->parentNode->parentNode;
     $company_name_dates = $company_name_dates_node->nodeValue;
    $company_name_dates_array = explode(",", $company_name_dates);
+
      $comp['company_name']= trim($company_name_dates_array[0]);
      $comp['years'] = trim($company_name_dates_array[1]);
     $job_title_dicription = $company_name_dates_node->nextSibling->nextSibling->nodeValue;
   $job_title_dicription_array = explode(',',$job_title_dicription);
     $comp['job_title'] = trim($job_title_dicription_array[0]);
      $comp['job_description'] = trim($job_title_dicription_array[1]);
-     $this->company = $comp;
+
+     $this->company[] = $comp;
 }
 
 
