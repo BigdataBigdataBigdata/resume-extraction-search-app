@@ -163,12 +163,12 @@ require_once'include/bootstrap.php';
        }
 
        
-       $query = "select * from resume inner join experience on resume.rid=experience.rid where ".$query;
+       $query = "select * from resume inner join experience on resume.rid=experience.rid where ".$query ." group by resume.rid";
 
        var_dump($query);
 
-    $result = mysql_query($query);
-  
+   $result = mysql_query($query);
+    var_dump($result);
     if($result === false)
     {
         echo 'there are no results for your search. Please try another search <a href="search_form.php" >here</a>';
@@ -186,7 +186,7 @@ require_once'include/bootstrap.php';
            <th>Download Resume</th></tr>';
        while($row = mysql_fetch_array($result))
        {
-           print "<tr><td>".$row['first_name']."</td>
+           print "  <tr><td>".$row['first_name']."</td>
                <td>".$row['last_name']."</td>
                    <td>".$row['email']."</td>
                        <td>".$row['city']."</td>
