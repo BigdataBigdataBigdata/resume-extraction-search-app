@@ -57,7 +57,7 @@ require_once('include/bootstrap.php');
 	<div class="top">
 			<div class="container">
                             <?php require_once'include/bootstrap.php';
-                            
+                            echo $uid;
                            $result =  mysql_query("select * from users where uid = '$uid'");
                            $obj = mysql_fetch_object($result);
                            echo "Welcome user: ".$obj->name;
@@ -65,7 +65,10 @@ require_once('include/bootstrap.php');
                            print '</br>';
 
                            
-                           $result = mysql_query("select * from resume where uid = '$uid' order by time desc");
+                           $resume_result = mysql_query("select * from resume where uid = '$uid' order by time desc");
+                     
+                           if(mysql_num_rows($resume_result) != 0)
+                           {
                           
                            print '<h3 >Resumes in your profile</h3>';
                           print '<table >';
@@ -79,7 +82,8 @@ require_once('include/bootstrap.php');
                               <th>Resume</th>
                               <th>Status</th>
                               </tr>';
-                          $row = mysql_fetch_object($result);
+                          $row = mysql_fetch_object($resume_result);
+
   
   print "<tr>
        <td> ".$row->first_name."</td>
@@ -102,7 +106,12 @@ require_once('include/bootstrap.php');
   ";
   
   print'</table> </br>';
- 
+                           }
+                           else
+                           {
+                               print "You have not yet uploaded a resume to your profile";
+                               
+                           }
   
 
       
