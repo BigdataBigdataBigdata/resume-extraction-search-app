@@ -57,7 +57,7 @@ require_once('include/bootstrap.php');
 	<div class="top">
 			<div class="container">
                             <?php require_once'include/bootstrap.php';
-                            echo $uid;
+                           
                            $result =  mysql_query("select * from users where uid = '$uid'");
                            $obj = mysql_fetch_object($result);
                            echo "Welcome user: ".$obj->name;
